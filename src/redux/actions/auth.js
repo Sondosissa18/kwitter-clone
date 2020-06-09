@@ -5,6 +5,10 @@ export const LOGIN = "AUTH/LOGIN";
 export const LOGIN_SUCCESS = "AUTH/LOGIN_SUCCESS";
 export const LOGIN_FAILURE = "AUTH/LOGIN_FAILURE";
 export const LOGOUT = "AUTH/LOGOUT";
+// export const SIGNUP_FAILURE = "USERS/SIGNUP_FAILURE";
+// export const SIGNUP = "USERS/SIGNUP";
+// export const GETUSER = "USERS/GETUSER";
+// export const GETUSER_FAILURE = "USERS/GETUSER_FAILURE";
 
 /*
  AUTH ACTIONS (this is a thunk....)
@@ -19,7 +23,10 @@ export const login = (credentials) => async (dispatch, getState) => {
     // console.log({ result })
     dispatch({ type: LOGIN_SUCCESS, payload });
   } catch (err) {
-    dispatch({ type: LOGIN_FAILURE });
+    dispatch({
+      type: LOGIN_FAILURE,
+      payload: err.message,
+    });
   }
 };
 
@@ -35,4 +42,26 @@ export const logout = () => async (dispatch, getState) => {
     dispatch({ type: LOGOUT });
   }
 };
+
+// export const createUser = () => async (dispatch, getState) => {
+//   try {
+//     const payload = await api.createUser();
+//     dispatch({ type: SIGNUP, payload });
+//   } catch (err) {
+//     dispatch({
+//       type: SIGNUP_FAILURE,
+//       payload: "There was an error on the server",
+//     });
+//   }
+// };
+
+// export const getUser = () => async (dispatch, getState) => {
+//   try {
+//     const payload = await api.getUser();
+//     dispatch({ type: GETUSER, payload });
+//   } finally {
+//     dispatch({ type: GETUSER_FAILURE });
+//   }
+// };
+
 // END AUTH ACTIONS

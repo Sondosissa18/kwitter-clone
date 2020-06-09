@@ -66,6 +66,54 @@ class API {
       helpMeInstructor(err);
     }
   }
+  //create a new user
+  async createUser({ username, displayName, password }) {
+    try {
+      const result = await this.axiosInstance.post("/users", {
+        username,
+        displayName,
+        password,
+      });
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+    }
+  }
+
+  //profile page
+  //get a user
+  async getUser(username) {
+    try {
+      const result = await this.axiosInstance.get(`/users/${username}`);
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+    }
+  }
+  ///button at the bottom profile page
+  //update user
+  async upatetUser(password, about, displayName, username) {
+    try {
+      const result = await this.axiosInstance.patch(`/users/${username}`, {
+        password,
+        about,
+        displayName,
+      });
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+    }
+  }
+
+  //Delete user
+  async deleteUser(username) {
+    try {
+      const result = await this.axiosInstance.delete(`/users/${username}`);
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+    }
+  }
 }
 
 // WARNING.. do not touch below this line if you want to have a good day =]
