@@ -47,6 +47,7 @@ export const LoginForm = ({ login, loading, error }) => {
       </form>
       {loading && <Loader />}
       {error && <p style={{ color: "red" }}>{error.message}</p>}
+      {console.log(state)}
     </React.Fragment>
   );
 };
