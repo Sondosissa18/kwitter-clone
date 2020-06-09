@@ -56,6 +56,16 @@ class API {
     }
   }
 
+  async listOfMessages(credentials) {
+    try {
+      const result = await this.axiosInstance.get("/messages", {
+        credentials
+      });
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+    }
+  }
   //create a new user
   async createUser({ username, displayName, password }) {
     try {
