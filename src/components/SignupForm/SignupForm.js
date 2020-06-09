@@ -45,6 +45,7 @@ export const SignupForm = ({ createUser, loading, error }) => {
           required
           onChange={handleChange}
         />
+        <label htmlFor="displayName">DisplayName</label>
         <input
           type="displayName"
           name="displayName"
