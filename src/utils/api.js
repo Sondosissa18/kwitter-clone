@@ -55,6 +55,30 @@ class API {
       helpMeInstructor(err);
     }
   }
+
+  async getUser() {
+    try {
+      await this.axiosInstance.get("/users/username/picture");
+    } catch (err) {
+      helpMeInstructor(err);
+    }
+  }
+
+  async deleteUser() {
+    try {
+      await this.axiosInstance.delete("/users/username");
+    } catch (err) {
+      helpMeInstructor(err);
+    }
+  }
+
+  async setUser() {
+    try {
+      await this.axiosInstance.put("/users/username/picture");
+    } catch (err) {
+      helpMeInstructor(err);
+    }
+  }
 }
 
 // WARNING.. do not touch below this line if you want to have a good day =]
