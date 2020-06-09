@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
-import { login } from "../../redux/actions/auth";
+// import { SIGNUP } from "../../redux/actions/auth";
+import { createUser, getUser, updateUser } from "../../redux/actions/users.js";
 
 // https://react-redux.js.org/using-react-redux/connect-mapstate#connect-extracting-data-with-mapstatetoprops
 const mapStateToProps = (state) => ({
@@ -9,9 +10,9 @@ const mapStateToProps = (state) => ({
 
 // https://react-redux.js.org/using-react-redux/connect-mapdispatch#connect-dispatching-actions-with-mapdispatchtoprops
 const mapDispatchToProps = {
-  login,
-
-  // getUser,
+  createUser,
+  getUser,
+  updateUser,
 };
 
 export const enhancer = connect(mapStateToProps, mapDispatchToProps);

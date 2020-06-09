@@ -7,6 +7,12 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   logout,
+  // deleteMessage: () => {
+  //   dispatch(deleteMessage());
+  // },
+  // createUser: () => {
+  //   dispatch(createUser());
+  // },
 };
 
 export const enhancer = connect(mapStateToProps, mapDispatchToProps);
