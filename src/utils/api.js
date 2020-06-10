@@ -66,6 +66,18 @@ class API {
       helpMeInstructor(err);
     }
   }
+
+  async createMessage(credentials) {
+    try {
+      const result = await this.axiosInstance.post("/messages", {
+        credentials
+      });
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+    }
+  }
+
   //create a new user
   async createUser({ username, displayName, password }) {
     try {
