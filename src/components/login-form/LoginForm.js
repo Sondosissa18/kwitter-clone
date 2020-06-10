@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ProptTypes from "prop-types";
 import { Loader } from "../loader";
+import { Link } from "react-router-dom";
 import "./LoginForm.css";
 
 export const LoginForm = ({ login, loading, error }) => {
@@ -45,6 +46,7 @@ export const LoginForm = ({ login, loading, error }) => {
           Login
         </button>
       </form>
+      <Link to="/signup">SIGN UP</Link>
       {loading && <Loader />}
       {error && <p style={{ color: "red" }}>{error.message}</p>}
       {console.log(state)}
