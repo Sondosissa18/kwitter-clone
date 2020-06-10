@@ -42,10 +42,13 @@ export const LoginForm = ({ login, loading, error }) => {
           required
           onChange={handleChange}
         />
+        <br />
         <button type="submit" disabled={loading}>
           Login
         </button>
       </form>
+      <br />
+
       <Link to="/signup">SIGN UP</Link>
       {loading && <Loader />}
       {error && <p style={{ color: "red" }}>{error.message}</p>}

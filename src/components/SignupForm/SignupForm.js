@@ -70,6 +70,7 @@ export const SignupForm = ({ createUser, loading, error }) => {
           </Row>
           <Row className="justify-content-start">
             <Button
+              // style={{ marginLeft: "5%" }}
               type="submit"
               disabled={loading}
               className="fill-color-blue"
