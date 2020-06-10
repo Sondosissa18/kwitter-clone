@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 //import Card from "react-bootstrap/Card";
 
 class ProfileCard extends React.Component {
+  /*
   componentDidMount() {
     this.props.createUser();
   }
@@ -22,15 +23,16 @@ class ProfileCard extends React.Component {
       this.props.createUser(this.props.username);
     }
   }
-
+*/
   render() {
+    /*
     if (this.props.result === null) {
       return <Loader />;
     }
-
+*/
     return (
       <React.Fragment>
-        <div id="container">
+        {/* <div id="container">
           <div className="container">
             <Card border="light" style={{ maxWidth: "200" }}>
               <CardImg
@@ -43,12 +45,12 @@ class ProfileCard extends React.Component {
                     : "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"
                 }
               />
-              {/* <UploadImgProfile username={this.props.username} /> */}
+              <UploadImgProfile username={this.props.username} />
               <CardBody>
                 <Link to={`/profile/${this.props.username}`}>
-                  {/* <Link to="/profile" Component={this.props.username}> */}
+                  <Link to="/profile" Component={this.props.username}>
                   <CardTitle className="title">
-                    {this.props.currentUser.displayName}
+                  {this.props.currentUser.displayName}
                   </CardTitle>
                 </Link>
                 <div className="bio">
@@ -77,7 +79,8 @@ class ProfileCard extends React.Component {
               </CardFooter>
             </Card>
           </div>
-        </div>
+        </div> */}
+        {console.log(this.props)}
       </React.Fragment>
     );
   }
