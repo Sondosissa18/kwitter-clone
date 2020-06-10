@@ -1,4 +1,5 @@
 import axios from "axios";
+import { createUser } from "../redux/actions";
 
 class API {
   axiosInstance = null;
@@ -56,7 +57,7 @@ class API {
     }
   }
 
-  async getUser() {
+  async getUserPic() {
     try {
       await this.axiosInstance.get("/users/username/picture");
     } catch (err) {
@@ -64,17 +65,64 @@ class API {
     }
   }
 
-  async deleteUser() {
+  async setUserPic() {
     try {
-      await this.axiosInstance.delete("/users/username");
+      await this.axiosInstance.put("/users/username/picture");
     } catch (err) {
       helpMeInstructor(err);
     }
   }
 
-  async setUser() {
+  async deleteUser(username) {
     try {
-      await this.axiosInstance.put("/users/username/picture");
+      const result = await this.axiosInstance.delete(`/users/${username}`);
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+    }
+  }
+
+  // async deleteUser(username) {
+  // try {
+  // await this.axiosInstance.delete("/users/username");
+  // } catch (err) {
+  // helpMeInstructor(err);
+  // }
+  // }
+
+  async createUser({ username, displayName, password }) {
+    try {
+      const result = await this.axiosInstance.post("/users", {
+        username,
+        displayName,
+        password,
+      });
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+    }
+  }
+
+  //profile page
+  //get a user
+  async getUser(username) {
+    try {
+      const result = await this.axiosInstance.get(`/users/${username}`);
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+    }
+  }
+  ///button at the bottom profile page
+  //update user
+  async upatetUser(password, about, displayName, username) {
+    try {
+      const result = await this.axiosInstance.patch(`/users/${username}`, {
+        password,
+        about,
+        displayName,
+      });
+      return result;
     } catch (err) {
       helpMeInstructor(err);
     }

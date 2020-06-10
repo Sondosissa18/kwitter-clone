@@ -1,6 +1,6 @@
 import React from "react";
 import { MenuContainer } from "../components";
-import { ProfileCard } from "../components";
+import ProfileCard from "../components/profile/ProfileCard";
 
 //import { MessageList } from "../components";
 //import "bootstrap/dist/css/bootstrap.min.css";
@@ -15,10 +15,10 @@ export const ProfileScreen = () => (
         <ProfileCard />
         {/* username={this.props.match.params.username} /> */}
       </div>
-      <div className="MessageList">
+      <div className="ListOfMessages">
         <h4 style={{ margin: "auto" }}> Your Posts</h4>
         {""}
-        {/* <MessageList username={this.props.match.params.username} /> */}
+        {/* <ListOfMessages username={this.props.match.params.username} /> */}
       </div>
     </div>
   </>
