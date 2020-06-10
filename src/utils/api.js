@@ -59,15 +59,17 @@ class API {
 
   async getUserPic() {
     try {
-      await this.axiosInstance.get("/users/username/picture");
+      const result = await this.axiosInstance.get("/users/username/picture");
+      return result;
     } catch (err) {
       helpMeInstructor(err);
     }
   }
 
-  async setUserPic() {
+  async setUserPic(username, token, data) {
     try {
-      await this.axiosInstance.put("/users/username/picture");
+      const result = await this.axiosInstance.put("/users/username/picture");
+      return result;
     } catch (err) {
       helpMeInstructor(err);
     }

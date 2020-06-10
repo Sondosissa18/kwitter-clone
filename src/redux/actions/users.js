@@ -15,8 +15,13 @@ export const DELETEUSER_SUCCESS = "USERS/DELETEUSER_SUCCESS";
 export const DELETEUSER_FAILURE = "USERS/DELETEUSER_FAILURE";
 //export const DeleteUser = "AUTH/LOGIN_SUCCESS";
 
-export const GETUSERPIC = "USERNAME/GETUSER_SUCCESS";
-export const SETUSERPIC = "PUTUSERIMAGE/PUTUSERIMAGE_SUCCESS";
+export const SETUSERPIC = "USERS/SETUSERPIC";
+export const SETUSERPIC_SUCCESS = "USERS/SETUSERPIC_SUCCESS";
+export const SETUSERPIC_FAILURE = "USERS/SETUSERPIC_FAILURE";
+
+export const GETUSERPIC = "USERS/GETUSER";
+export const GETUSERPIC_SUCCESS = "USERS/GETUSER_SUCCESS";
+export const GETUSERPIC_FAILURE = "USERS/GETUSER_FAILURE";
 
 export const getUserPic = (username) => async (dispatch, getState) => {
   try {
@@ -31,18 +36,22 @@ export const getUserPic = (username) => async (dispatch, getState) => {
   }
 };
 
-// export const setUserPic = (data) => async (dispatch, getState) => {
-//   try {
-//     dispatch({ type: PUTUSERIMAGE });
-//     const payload = await api.getUser();
-//     dispatch({ type: PUTUSERIMAGE_SUCCESS, payload });
-//   } catch {
-//     dispatch({
-//       type: GETUSER_FAILURE,
-//       payload: "There was an error on the server",
-//     });
-//   }
-// };
+//set profile picture
+export const setUserPic = (setUserPicData) => async (dispatch, getState) => {
+  try {
+    let data = new FormData(setUserPicData);
+    let username = getState().auth.login.result;
+    let token = getState().auth.login.result;
+    dispatch({ type: SETUSERPIC });
+    const payload = await api.setUserPic(username, token, data);
+    dispatch({ type: SETUSERPIC_SUCCESS, payload });
+  } catch {
+    dispatch({
+      type: SETUSERPIC_FAILURE,
+      payload: "There was an error on the server",
+    });
+  }
+};
 
 export const createUser = (username, displayName, password) => async (
   dispatch,

@@ -1,23 +1,30 @@
 import React from "react";
+import { connect } from "react-redux";
+import { setUserPic } from "../../redux/actions";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Form, FormInput, Button } from "shards-react";
 import "shards-ui/dist/css/shards.min.css";
+import { Form, FormInput, Button } from "shards-react";
 //import api from "../../utils/api";
 //import { api } from "src/utils/api";
 //import Card from "react-bootstrap/Card";
 
 class UploadImgProfile extends React.Component {
-  handleGetUser = (event) => {
+  handleSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.target);
-    this.props.setUser(data);
+    const formdata = new FormData(event.target);
+    this.props.setUserPic(formdata);
   };
+
+  // this.props
+  //   .setUserPic(event.target)
+  //   .then((event) => window.location.reload());
+  //};
   render() {
     return (
       <React.Fragment>
         {this.props.username === this.props.loggedInUsername && (
           <Form
-            onSubmit={this.handleGetUser}
+            onSubmit={this.handleSubmit}
             style={{ display: "flex", flexDirection: "row" }}
           >
             <FormInput
@@ -43,4 +50,17 @@ class UploadImgProfile extends React.Component {
   }
 }
 
-export default UploadImgProfile;
+const mapStateToProps = (state) => {
+  return {
+    loggedInUsername: state.auth.login.result.username,
+  };
+};
+
+export default connect(mapStateToProps, { setUserPic })(UploadImgProfile);
+
+// export default connect(
+//   (state) => ({
+//     loggedInUsername: state.auth.login.result.username,
+//   }),
+//   { setUserPic }
+// )(UploadImgProfile);

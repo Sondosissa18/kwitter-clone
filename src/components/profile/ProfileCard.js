@@ -1,12 +1,13 @@
 import React from "react";
 import { Loader } from "../loader/Loader";
 //import { UploadImgProfile } from "../profile/UploadImgProfile";
-//import DeleteUser from "./DeleteUser";
+import DeleteUser from "./DeleteUser";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
 import { Card, CardTitle, CardImg, CardBody, CardFooter } from "shards-react";
 import { connect } from "react-redux";
 import { createUser } from "../../redux/actions";
+import { Link } from "react-router-dom";
 //import { React } from "./node_modules/react";
 //import "./node_modules/bootstrap/dist/css/bootstrap.min.css";
 //import Card from "react-bootstrap/Card";
@@ -16,24 +17,16 @@ class ProfileCard extends React.Component {
     this.props.createUser();
   }
 
-  // componentDidUpdate(){}
-  //const ProfileCard = ({ getUser, loading, error }) => {
-
-  // handleGetUser = (event) => {
-  //   event.preventDefault();
-  //   getUserPic(props);
-  // };
-
-  // handleUpdate = (event) => {
-  //   const userName = event.target.username;
-  //   const inputValue = event.target.value;
-  //   if ((prevProps) => ({ ...prevProps, [userName]: inputValue }));
-  // };
+  componentDidUpdate(prevProps) {
+    if (this.props.username !== prevProps.username) {
+      this.props.createUser(this.props.username);
+    }
+  }
 
   render() {
-    // if (this.props.result === null) {
-    //   return <Loader />;
-    // }
+    if (this.props.result === null) {
+      return <Loader />;
+    }
 
     return (
       <React.Fragment>
@@ -45,18 +38,19 @@ class ProfileCard extends React.Component {
                 variant="top"
                 src={
                   this.props.currentUser.pictureLocation
-                    ? "getUserPic()" + this.props.currentUser.pictureLocation
+                    ? "https://kwitter-api.herokuapp.com" +
+                      this.props.currentUser.pictureLocation
                     : "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"
                 }
               />
               {/* <UploadImgProfile username={this.props.username} /> */}
               <CardBody>
-                {/* <Link to={`/profile/${this.props.username}`}> */}
-                {/* <Link to="/profile" Component={this.props.username}>*/}
-                <CardTitle className="title">
-                  {this.props.currentUser.displayName}
-                </CardTitle>
-                {/* </Link> */}
+                <Link to={`/profile/${this.props.username}`}>
+                  {/* <Link to="/profile" Component={this.props.username}> */}
+                  <CardTitle className="title">
+                    {this.props.currentUser.displayName}
+                  </CardTitle>
+                </Link>
                 <div className="bio">
                   {this.props.currentUser.about
                     ? this.props.currentUser.about
@@ -79,7 +73,7 @@ class ProfileCard extends React.Component {
                   {new Date(this.props.currentUser.updatedAt).toDateString()}
                 </p>
 
-                {/* <DeleteUser username={this.props.username} /> */}
+                <DeleteUser username={this.props.username} />
               </CardFooter>
             </Card>
           </div>

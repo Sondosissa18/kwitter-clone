@@ -55,6 +55,7 @@ export const usersReducer = (state = INITIAL_STATE, action) => {
         ...state,
         loading: true,
       };
+
     case GETUSER_SUCCESS:
       return {
         ...state,

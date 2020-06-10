@@ -13,7 +13,7 @@ export const ProfileScreen = () => (
     <div className="container">
       <div className="ProfileCard">
         <ProfileCard />
-        {/* username={this.props.match.params.username} /> */}
+        username={this.props.match.params.username} />
       </div>
       <div className="ListOfMessages">
         <h4 style={{ margin: "auto" }}> Your Posts</h4>
