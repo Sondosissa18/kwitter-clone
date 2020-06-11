@@ -1,6 +1,6 @@
 import React from "react";
-import { connect } from "react-redux";
-import { setUserPic } from "../../redux/actions";
+//import { connect } from "react-redux";
+//import { setUserPic } from "../../redux/actions";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
 import { Form, FormInput, Button } from "shards-react";
@@ -8,7 +8,7 @@ import { Form, FormInput, Button } from "shards-react";
 //import { api } from "src/utils/api";
 //import Card from "react-bootstrap/Card";
 
-class UploadImgProfile extends React.Component {
+export class UploadImgProfile extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const formdata = new FormData(event.target);
@@ -29,7 +29,7 @@ class UploadImgProfile extends React.Component {
         >
           <FormInput
             style={{ borderRadius: "0", paddingTop: "10px" }}
-            squared
+            squared="true"
             size="sm"
             type="file"
             name="picture"

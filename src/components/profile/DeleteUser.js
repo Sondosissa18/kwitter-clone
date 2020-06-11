@@ -17,17 +17,17 @@ class DeleteUser extends React.Component {
   render() {
     return (
       <React.Fragment>
-        {this.props.username === this.props.loggedInUsername && (
-          //this.props.currentUser && (
-          <Button
-            outline
-            theme="danger"
-            size="sm"
-            onClick={this.handleDeleteUser}
-          >
-            Delete
-          </Button>
-        )}
+        {/* {this.props.username === this.props.loggedInUsername && ( */}
+        {/* this.props.currentUser && ( */}
+        <Button
+          outline
+          theme="danger"
+          size="sm"
+          onClick={this.handleDeleteUser}
+        >
+          Delete Profile
+        </Button>
+        {/* )} */}
       </React.Fragment>
     );
   }

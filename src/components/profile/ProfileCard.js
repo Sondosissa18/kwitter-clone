@@ -1,6 +1,6 @@
 import React from "react";
 import { Loader } from "../loader/Loader";
-//import { UploadImgProfile } from "../profile/UploadImgProfile";
+import { UploadImgProfile } from "../profile/UploadImgProfile";
 import DeleteUser from "./DeleteUser";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
@@ -26,6 +26,9 @@ class ProfileCard extends React.Component {
       return <Loader />;
     }
 
+    const createDate = new Date(this.props.createdAt);
+    const updateDate = new Date(this.props.updatedAt);
+
     return (
       <React.Fragment>
         <div id="container">
@@ -41,7 +44,7 @@ class ProfileCard extends React.Component {
                     : "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"
                 }
               />
-              {/* <UploadImgProfile username={true} /> */}
+              <UploadImgProfile username={true} />
               {/* this.props.currentUser */}
               <CardBody>
                 <Link to={`/profile/${this.props.currentUser}`}>
@@ -64,15 +67,8 @@ class ProfileCard extends React.Component {
                   justifyContent: "space-evenly",
                 }}
               >
-                <p>
-                  Joined:{" "}
-                  {/* {new Date(this.props.currentUser.createdAt).toDateString()} */}
-                </p>
-                <p>
-                  Last Updated:{" "}
-                  {/* {new Date(this.props.currentUser.updatedAt).toDateString()} */}
-                </p>
-
+                <p>Joined: {createDate.toDateString()}</p>
+                <p>Last Updated: {updateDate.toDateString()}</p>
                 <DeleteUser username={this.props.username} />
               </CardFooter>
             </Card>
