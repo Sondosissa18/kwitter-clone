@@ -4,9 +4,9 @@ import api from "../../utils/api";
 export const GET_MESSAGES = "MESSAGES/GET_MESSAGES";
 export const GET_MESSAGES_SUCCESS = "MESSAGES/GET_MESSAGES_SUCCESS";
 export const GET_MESSAGES_FAILURE = "MESSAGES/GET_MESSAGES_FAILURE";
-export const CREATE_MESSAGES = "MESSAGES/CREATE_MESSAGES";
-export const CREATE_MESSAGES_SUCCESS = "MESSAGES/CREATE_MESSAGES_SUCCESS";
-export const CREATE_MESSAGES_FAILURE = "MESSAGES/CREATE_MESSAGES_FAILURE";
+export const CREATE_MESSAGE = "MESSAGES/CREATE_MESSAGE";
+export const CREATE_MESSAGE_SUCCESS = "MESSAGES/CREATE_MESSAGE_SUCCESS";
+export const CREATE_MESSAGE_FAILURE = "MESSAGES/CREATE_MESSAGE_FAILURE";
 
 //ACTIONS
 export const listOfMessages = (credentials) => async (dispatch, getState) => {
@@ -19,13 +19,13 @@ export const listOfMessages = (credentials) => async (dispatch, getState) => {
   }
 };
 
-export const createMessages = (credentials) => async (dispatch, getState) => {
+export const createMessage = (credentials) => async (dispatch, getState) => {
   try {
-    dispatch({ type: CREATE_MESSAGES });
-    const payload = await api.createMessages(credentials);
-    dispatch({ type: CREATE_MESSAGES_SUCCESS, payload });
+    dispatch({ type: CREATE_MESSAGE });
+    const payload = await api.createMessage(credentials);
+    dispatch({ type: CREATE_MESSAGE_SUCCESS, payload });
   } catch (err) {
-    dispatch({ type: CREATE_MESSAGES_FAILURE });
+    dispatch({ type: CREATE_MESSAGE_FAILURE });
   }
 };
 
