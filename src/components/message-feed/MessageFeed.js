@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Loader } from "../loader";
 import "./MessageFeed.css";
 import { PostMessageContainer } from "../post-message/"
+import { Container, Row, Col } from "react-bootstrap";
 
 export class MessageFeed extends Component {
   constructor(props) {
