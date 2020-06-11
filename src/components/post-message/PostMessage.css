@@ -1,0 +1,11 @@
+#messageForm {
+  display: flex;
+
+  flex-direction: column;
+  border: 1px solid #cad0d2;
+  border-radius: 4px;
+  /* overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;  */
+}
