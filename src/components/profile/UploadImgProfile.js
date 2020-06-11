@@ -22,41 +22,48 @@ class UploadImgProfile extends React.Component {
   render() {
     return (
       <React.Fragment>
-        {this.props.username === this.props.loggedInUsername && (
-          <Form
-            onSubmit={this.handleSubmit}
-            style={{ display: "flex", flexDirection: "row" }}
+        {/* {this.props.username === this.props.loggedInUsername && ( */}
+        <Form
+          onSubmit={this.handleSubmit}
+          style={{ display: "flex", flexDirection: "row" }}
+        >
+          <FormInput
+            style={{ borderRadius: "0", paddingTop: "10px" }}
+            squared
+            size="sm"
+            type="file"
+            name="picture"
+            accept="image/png, image/jpeg, image/gif"
+          />
+          <Button
+            squared
+            theme="primary"
+            size="sm"
+            type="submit"
+            value="Upload Picture"
           >
-            <FormInput
-              style={{ borderRadius: "0", paddingTop: "10px" }}
-              squared
-              size="sm"
-              type="file"
-              name="picture"
-            />
-            <Button
-              squared
-              theme="primary"
-              size="sm"
-              type="submit"
-              value="Upload Picture"
-            >
-              Upload
-            </Button>
-          </Form>
-        )}
+            Upload
+          </Button>
+        </Form>
+        {/* )} */}
       </React.Fragment>
     );
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    loggedInUsername: state.auth.login.result.username,
-  };
-};
+// const mapStateToProps = (state) => {
+//   return {
+//     result: state.users.setUserPic.result,
 
-export default connect(mapStateToProps, { setUserPic })(UploadImgProfile);
+//loading: state.users.setUserPic.loading,
+// error: state.users.setUserPic.error,
+
+//loggedInUsername: state.auth.login.result.username,
+//state.users.currentUser.user
+//   };
+// };
+
+// export default connect(mapStateToProps, { setUserPic })(UploadImgProfile);
 
 // export default connect(
 //   (state) => ({

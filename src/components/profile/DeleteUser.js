@@ -18,6 +18,7 @@ class DeleteUser extends React.Component {
     return (
       <React.Fragment>
         {this.props.username === this.props.loggedInUsername && (
+          //this.props.currentUser && (
           <Button
             outline
             theme="danger"
