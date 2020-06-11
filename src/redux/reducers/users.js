@@ -9,6 +9,9 @@ import {
   UPDATEUSER,
   UPDATEUSER_FAILURE,
   UPDATEUSER_SUCCESS,
+  DELETEUSER,
+  DELETEUSER_SUCCESS,
+  DELETEUSER_FAILURE,
 } from "../actions";
 // import { SIGNUP_SUCCESS } from "../actions/users";
 
@@ -103,6 +106,36 @@ export const usersReducer = (state = INITIAL_STATE, action) => {
       });
 
     case UPDATEUSER_FAILURE:
+      return {
+        ...INITIAL_STATE,
+        error: action.payload,
+        loading: false,
+      };
+
+    case DELETEUSER:
+      return {
+        ...state,
+        loading: true,
+      };
+
+    case DELETEUSER_SUCCESS:
+      return Object.assign({}, state, {
+        ...state,
+        currentUser: {
+          user: {
+            username: action.payload.user.username,
+            displayName: "",
+            about: "",
+            createdAt: "",
+            updatedAt: "",
+            pictureLocation: "",
+            googleId: "",
+          },
+          statusCode: action.payload.statusCode,
+        },
+      });
+
+    case DELETEUSER_FAILURE:
       return {
         ...INITIAL_STATE,
         error: action.payload,
