@@ -32,12 +32,16 @@ export const SignupForm = ({ createUser, loading, error }) => {
   return (
     <React.Fragment>
       <MenuContainer />
-      <Container>
+
+      <Container style={{ marginLeft: "5%" }}>
         <form id="SIGNUP-form" onSubmit={handleSIGNUP}>
-          <Row className="justify-content-start">
+          <br />
+
+          <Row className="justify-content-start" style={{ padding: "3px" }}>
             <label htmlFor="username">Username</label>
 
             <input
+              style={{ padding: "3px" }}
               type="text"
               name="username"
               value={state.username}
@@ -46,10 +50,11 @@ export const SignupForm = ({ createUser, loading, error }) => {
               onChange={handleChange}
             />
           </Row>
-          <Row className="justify-content-start">
+          <Row className="justify-content-start" style={{ padding: "3px" }}>
             <label htmlFor="password">Password</label>
 
             <input
+              style={{ padding: "3px" }}
               type="password"
               name="password"
               value={state.password}
@@ -57,10 +62,11 @@ export const SignupForm = ({ createUser, loading, error }) => {
               onChange={handleChange}
             />
           </Row>
-          <Row className="justify-content-start">
+          <Row className="justify-content-start" style={{ padding: "3px" }}>
             <label htmlFor="displayName">DisplayName</label>
 
             <input
+              style={{ padding: "3px" }}
               type="displayName"
               name="displayName"
               value={state.displayName}
@@ -68,9 +74,11 @@ export const SignupForm = ({ createUser, loading, error }) => {
               onChange={handleChange}
             />
           </Row>
+          <br />
           <Row className="justify-content-start">
             <Button
-              // style={{ marginLeft: "5%" }}
+              // class="btn btn-primary"
+              style={{ backgroundColor: "orange", Size: "20px" }}
               type="submit"
               disabled={loading}
               className="fill-color-blue"
