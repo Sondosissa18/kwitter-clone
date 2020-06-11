@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Loader } from "../loader";
 import "./MessageFeed.css";
+import { PostMessageContainer } from "../post-message/"
 import { Container, Row, Col } from "react-bootstrap";
 
 export class MessageFeed extends Component {
@@ -12,14 +13,19 @@ export class MessageFeed extends Component {
     this.props.onListOfMessages();
   };
 
+
   componentDidMount() {
-    this.onListOfMessages();
+   this.onListOfMessages();
   }
 
   render() {
     return (
       <div id="messageFeed">
         <div id="messages">
+          
+      <PostMessageContainer />
+      {this.props.loading && <Loader />}
+      {console.log(this.state)}
           {this.props.messages.length > 0 &&
             this.props.messages.map((message) => (
               <div key={message.id}>
@@ -27,8 +33,7 @@ export class MessageFeed extends Component {
                 <p>{message.text}</p>
               </div>
             ))}
-
-          {this.props.loading && <Loader />}
+          
           {this.props.error && (
             <p style={{ color: "red" }}>{this.props.error.message}</p>
           )}

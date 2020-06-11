@@ -66,6 +66,29 @@ class API {
       helpMeInstructor(err);
     }
   }
+
+  async createMessage({ text }) {
+    try {
+      const result = await this.axiosInstance.post("/messages", {
+        text
+      });
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+    }
+  }
+
+  async addLike(credentials) {
+    try {
+      const result = await this.axiosInstance.post("/likes", {
+        credentials
+      });
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+    }
+  }
+
   //create a new user
   async createUser({ username, displayName, password }) {
     try {
