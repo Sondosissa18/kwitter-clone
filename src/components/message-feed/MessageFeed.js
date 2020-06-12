@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Loader } from "../loader";
 import "./MessageFeed.css";
 import { PostMessageContainer } from "../post-message/"
+import { AddLikeContainer } from "../add-like"
 import { Container, Row, Col } from "react-bootstrap";
 
 export class MessageFeed extends Component {
@@ -31,6 +32,8 @@ export class MessageFeed extends Component {
               <div key={message.id}>
                 <p>{message.username}</p>
                 <p>{message.text}</p>
+                <p>Likes: {message.likes.length}</p>
+                <AddLikeContainer messageIdProps={message.id} likes={message.likes}/>
               </div>
             ))}
           
