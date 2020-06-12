@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import "./PostMessage.css";
 import { Button, Card, Container } from "react-bootstrap";
 
-export const PostMessage = ({ createMessage, listOfMessages, loading, error }) => {
+export const PostMessage = ({
+  createMessage,
+  listOfMessages,
+  loading,
+  error,
+}) => {
   // Not to be confused with "this.setState" in classes
   const [state, setState] = useState({
     text: "",
@@ -42,10 +47,13 @@ export const PostMessage = ({ createMessage, listOfMessages, loading, error }) =
                   placeholder=" Type a new message"
                 />
                 <br />
-                <button variant="primary" disabled={loading}>Post</button>
+                <br />
+                <Button variant="primary" disabled={loading}>
+                  Post
+                </Button>
               </form>
             </Card.Text>
-            
+
             {/* <Button variant="primary">Post</Button> */}
           </Card.Body>
         </Card>

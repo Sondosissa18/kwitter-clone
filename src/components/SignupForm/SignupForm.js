@@ -5,7 +5,7 @@ import "./LoginForm.css";
 import { createUser } from "../../redux/actions/users";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Button, Row, Col } from "react-bootstrap";
-import { Route } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 import { MenuContainer } from "../menu";
 
 export const SignupForm = ({ createUser, loading, error }) => {
@@ -75,16 +75,18 @@ export const SignupForm = ({ createUser, loading, error }) => {
           </Row>
           <br />
           <Row className="justify-content-start">
-            <Button
-              variant="outline-secondary"
-              // class="btn btn-primary"
-              style={{ backgroundColor: "orange", Size: "20px" }}
-              type="submit"
-              disabled={loading}
-              className="fill-color-blue"
-            >
-              SIGNUP
-            </Button>
+            <Link to="/">
+              <Button
+                variant="outline-secondary"
+                // class="btn btn-primary"
+                style={{ backgroundColor: "orange", Size: "20px" }}
+                type="submit"
+                disabled={loading}
+                className="fill-color-blue"
+              >
+                SIGNUP
+              </Button>
+            </Link>
           </Row>
         </form>
         {loading && <Loader />}
