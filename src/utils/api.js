@@ -90,6 +90,14 @@ class API {
     }
   }
 
+  async deleteLikeAction({ likeId }) {
+    try {
+      await this.axiosInstance.delete(`/likes/${likeId}`);
+    } catch (err) {
+      helpMeInstructor(err);
+    }
+  }
+
   //create a new user
   async createUser({ username, displayName, password }) {
     try {
