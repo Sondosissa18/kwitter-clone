@@ -19,6 +19,8 @@ export class MessageFeed extends Component {
    this.onListOfMessages();
   }
 
+  
+
   render() {
     return (
       <div id="messageFeed">

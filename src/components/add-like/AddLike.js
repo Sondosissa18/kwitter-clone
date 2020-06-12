@@ -41,7 +41,7 @@ import "./AddLike.css";
 
 
 
-export const AddLike = ({ addLikeAction, username, messageIdProps, likes }) => {
+export const AddLike = ({ addLikeAction, username, messageIdProps, likes, listOfMessages }) => {
   // Not to be confused with "this.setState" in classes
   
 
@@ -53,8 +53,9 @@ export const AddLike = ({ addLikeAction, username, messageIdProps, likes }) => {
     event.preventDefault();
     console.log(apiRequest)
     addLikeAction(apiRequest);
-    console.log(likes[0].username);
-    console.log(username);
+    // console.log(likes[0].username);
+    // console.log(username);
+    setTimeout(listOfMessages, 500)
   
   };
 
