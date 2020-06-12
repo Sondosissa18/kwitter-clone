@@ -80,18 +80,18 @@ export const SignupForm = ({ createUser, loading, error }) => {
           </Row>
           <br />
           <Row className="justify-content-start">
-            <Link to="/">
-              <Button
-                variant="outline-secondary"
-                // class="btn btn-primary"
-                style={{ backgroundColor: "orange", Size: "20px" }}
-                type="submit"
-                disabled={loading}
-                className="fill-color-blue"
-              >
-                SIGNUP
-              </Button>
-            </Link>
+            {/* <Link to="/"> */}
+            <Button
+              variant="outline-secondary"
+              // class="btn btn-primary"
+              style={{ backgroundColor: "orange", Size: "20px" }}
+              type="submit"
+              disabled={loading}
+              className="fill-color-blue"
+            >
+              SIGNUP
+            </Button>
+            {/* </Link> */}
           </Row>
         </form>
         {loading && <Loader />}
