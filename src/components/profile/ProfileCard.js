@@ -11,7 +11,7 @@ import {
   CardImg,
   CardBody,
   CardFooter,
-  Button,
+  //Button,
 } from "shards-react";
 import { connect } from "react-redux";
 import { getUser } from "../../redux/actions";

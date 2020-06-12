@@ -20,6 +20,9 @@ import {
   // GETUSERPIC_FAILURE,
   //SETUSER_SUCCESS,
   //LOGOUT,
+  // DELETEUSER,
+  // DELETEUSER_SUCCESS,
+  // DELETEUSER_FAILURE,
 } from "../actions";
 // import { SIGNUP_SUCCESS } from "../actions/users";
 
