@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./PostMessage.css";
 import { Button, Card, Container } from "react-bootstrap";
 
-export const PostMessage = ({ createMessage, listOfMessages, error }) => {
+export const PostMessage = ({ createMessage, listOfMessages, loading, error }) => {
   // Not to be confused with "this.setState" in classes
   const [state, setState] = useState({
     text: "",
@@ -11,7 +11,7 @@ export const PostMessage = ({ createMessage, listOfMessages, error }) => {
   const submitMessage = (event) => {
     event.preventDefault();
     createMessage(state);
-    listOfMessages();
+    setTimeout(listOfMessages, 200);
   };
 
   const handleChange = (event) => {
@@ -42,7 +42,7 @@ export const PostMessage = ({ createMessage, listOfMessages, error }) => {
                   placeholder=" Type a new message"
                 />
                 <br />
-                <button variant="primary">Post</button>
+                <button variant="primary" disabled={loading}>Post</button>
               </form>
             </Card.Text>
             
