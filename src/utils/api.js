@@ -81,11 +81,10 @@ class API {
     }
   }
 
-  
   async createMessage({ text }) {
     try {
       const result = await this.axiosInstance.post("/messages", {
-        text
+        text,
       });
       return result;
     } catch (err) {
@@ -96,7 +95,7 @@ class API {
   async addLikeAction({ messageId }) {
     try {
       const result = await this.axiosInstance.post("/likes", {
-        messageId
+        messageId,
       });
       return result;
     } catch (err) {
@@ -105,7 +104,6 @@ class API {
     }
   }
 
-  //create a new user
   async deleteUser(username) {
     try {
       const result = await this.axiosInstance.delete(`/users/${username}`);
@@ -135,15 +133,13 @@ class API {
   //   }
   // }
 
-  async createUser(username, displayName, password) {
+  async createUser({ username, displayName, password }) {
     try {
-      const result = await this.axiosInstance.post(
-        "/users",
-        // {
+      const result = await this.axiosInstance.post("/users", {
         username,
         displayName,
-        password
-      );
+        password,
+      });
       //});
       return result;
     } catch (err) {
