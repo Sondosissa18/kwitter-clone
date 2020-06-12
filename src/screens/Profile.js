@@ -11,6 +11,7 @@ export const ProfileScreen = () => (
   <>
     <MenuContainer />
     <h2 style={{ color: "purple", marginLeft: "5%" }}>Profile</h2>
+
     <div className="container">
       <div className="UserCard">
         <ProfileCard username={true} />

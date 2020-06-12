@@ -57,18 +57,24 @@ class API {
     }
   }
 
-  async getUserPic() {
-    try {
-      const result = await this.axiosInstance.get("/users/username/picture");
-      return result;
-    } catch (err) {
-      helpMeInstructor(err);
-    }
-  }
+  // async getUserPic(username) {
+  //   try {
+  //     const result = await this.axiosInstance.get(`/users/${username}/picture`);
+  //     return result;
+  //   } catch (err) {
+  //     helpMeInstructor(err);
+  //   }
+  // }
 
-  async setUserPic(username, token, data) {
+  async setUserPics(username, UploadImgProfile) {
     try {
-      const result = await this.axiosInstance.put("/users/username/picture");
+      //const data = FormData();
+      //data.append("picture", UploadImgProfile);
+      console.log("inside api");
+      const result = await this.axiosInstance.put(
+        `/users/${username}/picture`,
+        UploadImgProfile
+      );
       return result;
     } catch (err) {
       helpMeInstructor(err);
@@ -84,14 +90,6 @@ class API {
     }
   }
 
-  // async deleteUser(username) {
-  // try {
-  // await this.axiosInstance.delete("/users/username");
-  // } catch (err) {
-  // helpMeInstructor(err);
-  // }
-  // }
-
   async listOfMessages(credentials) {
     try {
       const result = await this.axiosInstance.get("/messages", {
@@ -103,44 +101,60 @@ class API {
     }
   }
 
-  async createUser({ username, displayName, password }) {
+  // async createUser(credentials) {
+  //   try {
+  //     const result = await this.axiosInstance.post("/users", credentials);
+  //     return result;
+  //   } catch (err) {
+  //     helpMeInstructor(err);
+  //   }
+  // }
+
+  async createUser(username, displayName, password) {
     try {
-      const result = await this.axiosInstance.post("/users", {
+      const result = await this.axiosInstance.post(
+        "/users",
+        // {
         username,
         displayName,
-        password,
-      });
+        password
+      );
+      //});
       return result;
     } catch (err) {
       helpMeInstructor(err);
     }
   }
 
-  //profile page
-  //get a user
-  // async getUser(username) {
-  //   try {
-  //     const result = await this.axiosInstance.get(`/users/${username}`);
-  //     return result;
-  //   } catch (err) {
-  //     helpMeInstructor(err);
-  //   }
-  // }
-  ///button at the bottom profile page
-  //update user
-  // async upatetUser(password, about, displayName, username) {
-  //   try {
-  //     const result = await this.axiosInstance.patch(`/users/${username}`, {
-  //       password,
-  //       about,
-  //       displayName,
-  //     });
-  //     return result;
-  //   } catch (err) {
-  //     helpMeInstructor(err);
-  //   }
-  // }
+  // get a user
+
+  async getUser(username) {
+    try {
+      const result = await this.axiosInstance.get(`/users/${username}`);
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+    }
+  }
+
+  // profile page
+  // /button in profile page
+  // update user
+
+  async updateUser(credentials, username) {
+    try {
+      const result = await this.axiosInstance.patch(
+        `/users/${username}`,
+        credentials
+      );
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+    }
+  }
 }
+
+//}
 
 // WARNING.. do not touch below this line if you want to have a good day =]
 

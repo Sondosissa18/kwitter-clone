@@ -1,8 +1,9 @@
 #container {
-  width: 50%;
+  width: 40%;
+  height: 20px;
   padding-right: 10px;
-  padding-left: 10px;
-  margin-right: 10%;
+  padding-left: 40px;
+  margin-right: 50%;
   margin-left: 20%;
   justify-content: left;
   display: flex;

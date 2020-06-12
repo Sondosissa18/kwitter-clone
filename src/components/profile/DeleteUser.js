@@ -8,17 +8,16 @@ import "shards-ui/dist/css/shards.min.css";
 
 class DeleteUser extends React.Component {
   handleDeleteUser = (event) => {
+    event.preventDefault();
     const confirmed = window.confirm("Delete will be Final");
     if (confirmed) {
-      this.props.deleteUser();
+      this.props.deleteUser(this.props.username);
     }
   };
 
   render() {
     return (
       <React.Fragment>
-        {/* {this.props.username === this.props.loggedInUsername && ( */}
-        {/* this.props.currentUser && ( */}
         <Button
           outline
           theme="danger"
@@ -26,8 +25,8 @@ class DeleteUser extends React.Component {
           onClick={this.handleDeleteUser}
         >
           Delete Profile
+          {console.log(this.props.deleteUser)}
         </Button>
-        {/* )} */}
       </React.Fragment>
     );
   }

@@ -1,34 +1,43 @@
 import React from "react";
 import { Loader } from "../loader/Loader";
-import { UploadImgProfile } from "../profile/UploadImgProfile";
+import UploadImgProfile from "../profile/UploadImgProfile";
+import UpdateUser from "../profile/UpdateUser";
 import DeleteUser from "./DeleteUser";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
-import { Card, CardTitle, CardImg, CardBody, CardFooter } from "shards-react";
+import {
+  Card,
+  CardTitle,
+  CardImg,
+  CardBody,
+  CardFooter,
+  Button,
+} from "shards-react";
 import { connect } from "react-redux";
-import { createUser } from "../../redux/actions";
+import { getUser } from "../../redux/actions";
 import { Link } from "react-router-dom";
 import "./ProfileCard.css";
 
 class ProfileCard extends React.Component {
   componentDidMount() {
-    this.props.createUser(this.props.currentUser);
+    console.log("componentDidMount");
+    this.props.getUser();
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.currentUser !== prevProps.currentUser) {
-      this.props.createUser(this.props.currentUser);
+      this.props.getUser();
     }
   }
 
   render() {
-    if (this.props.result === null) {
+    if (this.props.username === null) {
       return <Loader />;
     }
 
     const createDate = new Date(this.props.createdAt);
     const updateDate = new Date(this.props.updatedAt);
-
+    console.log(this.props.displayName);
     return (
       <React.Fragment>
         <div id="container">
@@ -38,25 +47,24 @@ class ProfileCard extends React.Component {
                 className="cardImg"
                 variant="top"
                 src={
-                  this.props.currentUser //.pictureLocation
+                  this.props.pictureLocation
                     ? "https://kwitter-api.herokuapp.com" +
-                      this.props.currentUser //.pictureLocation
+                      this.props.pictureLocation
                     : "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"
                 }
               />
               <UploadImgProfile username={true} />
               {/* this.props.currentUser */}
               <CardBody>
-                <Link to={`/profile/${this.props.currentUser}`}>
+                <Link to={`/profile/${this.props.users}`}>
                   {/* <Link to="/profile" Component={this.props.currentUser}> */}
                   <CardTitle className="title">
-                    {this.props.currentUser}
-                    {/* .displayName */}
+                    {this.props.displayName}
                   </CardTitle>
                 </Link>
                 <div className="bio">
-                  {this.props.currentUser //.about
-                    ? this.props.currentUser //.about
+                  {this.props.displayName //.about
+                    ? this.props.about
                     : "You don't have a Bio Yet"}
                 </div>
               </CardBody>
@@ -69,19 +77,29 @@ class ProfileCard extends React.Component {
               >
                 <p>Joined: {createDate.toDateString()}</p>
                 <p>Last Updated: {updateDate.toDateString()}</p>
-                <DeleteUser username={this.props.username} />
+                <DeleteUser username={true} />
               </CardFooter>
             </Card>
           </div>
         </div>
+        <UpdateUser />
       </React.Fragment>
     );
   }
 }
 const mapStateToProps = (state) => {
   return {
-    currentUser: state.users.currentUser.user,
+    pictureLocation: state.users.pictureLocation,
+    createdAt: state.users.createdAt,
+    updatedAt: state.users.updatedAt,
+    about: state.users.about,
+    displayName: state.users.displayName,
+    currentUser: state.users.currentUser,
+    username: state.users.username,
   };
 };
+const mapDispatchToProps = {
+  getUser,
+};
 
-export default connect(mapStateToProps, { createUser })(ProfileCard);
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileCard);

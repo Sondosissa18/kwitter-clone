@@ -1,41 +1,59 @@
 import React from "react";
-//import { connect } from "react-redux";
-//import { setUserPic } from "../../redux/actions";
+import { connect } from "react-redux";
+import { setUserPics } from "../../redux/actions";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
 import { Form, FormInput, Button } from "shards-react";
-//import api from "../../utils/api";
-//import { api } from "src/utils/api";
-//import Card from "react-bootstrap/Card";
 
-export class UploadImgProfile extends React.Component {
-  handleSubmit = (event) => {
-    event.preventDefault();
-    const formdata = new FormData(event.target);
-    this.props.setUserPic(formdata);
+class UploadImgProfile extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedFile: null,
+    };
+  }
+  handleChange = (event) => {
+    console.log(event.target.files[0]);
+    this.setState({
+      selectedFile: event.target.files[0],
+    });
   };
 
-  // this.props
-  //   .setUserPic(event.target)
-  //   .then((event) => window.location.reload());
-  //};
+  handleSubmit = (event) => {
+    console.log(event.target.files);
+    event.preventDefault();
+    const data = new FormData();
+    data.append("picture", this.state.selectedFile);
+    this.props.setUserPics(data);
+  };
+
+  // handleGet = (event) => {
+  //   console.log("hello");
+  //   event.preventDefault();
+  //   this.props
+  //     .getUserPic(event.target)
+  //     .then((event) => window.location.reload());
+  // };
+
   render() {
     return (
       <React.Fragment>
-        {/* {this.props.username === this.props.loggedInUsername && ( */}
         <Form
           onSubmit={this.handleSubmit}
           style={{ display: "flex", flexDirection: "row" }}
         >
           <FormInput
+            onChange={this.handleChange}
             style={{ borderRadius: "0", paddingTop: "10px" }}
             squared="true"
             size="sm"
             type="file"
+            id="picture"
             name="picture"
             accept="image/png, image/jpeg, image/gif"
           />
           <Button
+            onClick={this.handleSubmit}
             squared
             theme="primary"
             size="sm"
@@ -45,29 +63,13 @@ export class UploadImgProfile extends React.Component {
             Upload
           </Button>
         </Form>
-        {/* )} */}
       </React.Fragment>
     );
   }
 }
 
-// const mapStateToProps = (state) => {
-//   return {
-//     result: state.users.setUserPic.result,
+const mapDispatchToProps = {
+  setUserPics,
+};
 
-//loading: state.users.setUserPic.loading,
-// error: state.users.setUserPic.error,
-
-//loggedInUsername: state.auth.login.result.username,
-//state.users.currentUser.user
-//   };
-// };
-
-// export default connect(mapStateToProps, { setUserPic })(UploadImgProfile);
-
-// export default connect(
-//   (state) => ({
-//     loggedInUsername: state.auth.login.result.username,
-//   }),
-//   { setUserPic }
-// )(UploadImgProfile);
+export default connect(null, mapDispatchToProps)(UploadImgProfile);

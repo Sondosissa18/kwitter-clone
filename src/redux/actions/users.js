@@ -1,4 +1,5 @@
 import api from "../../utils/api";
+import { LOGOUT } from "./auth";
 
 export const SIGNUP_FAILURE = "USERS/SIGNUP_FAILURE";
 export const SIGNUP = "USERS/SIGNUP";
@@ -23,6 +24,8 @@ export const SETUSERPIC_FAILURE = "USERS/SETUSERPIC_FAILURE";
 // export const GETUSERPIC_SUCCESS = "USERS/GETUSER_SUCCESS";
 // export const GETUSERPIC_FAILURE = "USERS/GETUSER_FAILURE";
 
+//export const SETUSER_SUCCESS = "USERS/SETUSER_SUCCESS";
+
 // export const getUserPic = (username) => async (dispatch, getState) => {
 //   try {
 //     dispatch({ type: GETUSER });
@@ -37,14 +40,16 @@ export const SETUSERPIC_FAILURE = "USERS/SETUSERPIC_FAILURE";
 // };
 
 //set profile picture
-export const setUserPic = (setUserPicData) => async (dispatch, getState) => {
+export const setUserPics = (photo) => async (dispatch, getState) => {
+  const store = getState();
+  let username = store.auth.username;
   try {
-    let data = new FormData(setUserPicData);
-    let username = getState().auth.login.result;
-    let token = getState().auth.login.result;
     dispatch({ type: SETUSERPIC });
-    const payload = await api.setUserPic(username, token, data);
+    console.log("inside setuserpics");
+    const payload = await api.setUserPics(username, photo);
     dispatch({ type: SETUSERPIC_SUCCESS, payload });
+    dispatch(getUser());
+    //dispatch({ type: SETUSER_SUCCESS, payload });
   } catch {
     dispatch({
       type: SETUSERPIC_FAILURE,
@@ -74,7 +79,9 @@ export const getUser = () => async (dispatch, getState) => {
   try {
     let username = getState().auth.username;
     dispatch({ type: GETUSER });
+    console.log("inside getuser action");
     const payload = await api.getUser(username);
+    console.log(payload);
     dispatch({ type: GETUSER_SUCCESS, payload });
   } catch {
     dispatch({
@@ -84,10 +91,11 @@ export const getUser = () => async (dispatch, getState) => {
   }
 };
 
-export const updateUser = () => async (dispatch, getState) => {
+export const updateUser = (credentials) => async (dispatch, getState) => {
   try {
+    let username = getState().auth.username;
     dispatch({ type: UPDATEUSER });
-    const payload = await api.getUser();
+    const payload = await api.updateUser(credentials, username);
     dispatch({ type: UPDATEUSER_SUCCESS, payload });
   } catch {
     dispatch({
@@ -98,10 +106,14 @@ export const updateUser = () => async (dispatch, getState) => {
 };
 
 export const deleteUser = () => async (dispatch, getState) => {
+  const store = getState();
+  const username = store.auth.username;
   try {
     dispatch({ type: DELETEUSER });
-    const payload = await api.getUser();
-    dispatch({ type: DELETEUSER_SUCCESS, payload });
+    await api.deleteUser(username);
+    console.log("working");
+    dispatch({ type: DELETEUSER_SUCCESS });
+    dispatch({ type: LOGOUT });
   } catch {
     dispatch({
       type: DELETEUSER_FAILURE,
