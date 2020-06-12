@@ -78,13 +78,14 @@ class API {
     }
   }
 
-  async addLike(credentials) {
+  async addLikeAction({ messageId }) {
     try {
       const result = await this.axiosInstance.post("/likes", {
-        credentials
+        messageId
       });
       return result;
     } catch (err) {
+      // Instructor is logging you out because this failed
       helpMeInstructor(err);
     }
   }

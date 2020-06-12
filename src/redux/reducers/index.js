@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
 import { authReducer } from "./auth";
 import { messagesReducer } from "./messages";
-import { createMessageReducer } from "./messages";
+import { likeReducer } from "./likes"
 
-export default combineReducers({ auth: authReducer, messages: messagesReducer/*, messages: createMessageReducer */ });
+
+export default combineReducers({ auth: authReducer, messages: messagesReducer, likes: likeReducer });

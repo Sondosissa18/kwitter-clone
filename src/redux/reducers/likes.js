@@ -25,7 +25,7 @@ export const likeReducer = (state = INITIAL_STATE, action) => {
                 loading: true
             }
         case LIKE_MESSAGE_SUCCESS:
-            const like = action.payload
+            const { like } = action.payload
             return {
                 ...INITIAL_STATE,
                 like,
@@ -37,5 +37,7 @@ export const likeReducer = (state = INITIAL_STATE, action) => {
                 error: action.payload,
                 loading: false
             }
+        default:
+            return state;
     }
 }
