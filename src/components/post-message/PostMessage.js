@@ -11,6 +11,7 @@ export const PostMessage = ({ createMessage, listOfMessages, loading, error }) =
   const submitMessage = (event) => {
     event.preventDefault();
     createMessage(state);
+    setState((prevState) => ({ ...prevState, text: "" }));
     setTimeout(listOfMessages, 200);
   };
 
