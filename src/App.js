@@ -2,6 +2,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { Navigation } from "./components";
+import "bootstrap/dist/css/bootstrap.min.css";
 import configureStore from "./redux/configureStore";
 
 const { store, persistor } = configureStore();
