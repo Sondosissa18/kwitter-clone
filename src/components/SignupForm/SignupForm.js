@@ -36,7 +36,6 @@ export const SignupForm = ({ createUser, loading, error }) => {
       <Container style={{ marginLeft: "5%" }}>
         <form id="SIGNUP-form" onSubmit={handleSIGNUP}>
           <br />
-
           <Row className="justify-content-start" style={{ padding: "3px" }}>
             <label htmlFor="username">Username</label>
 
@@ -77,6 +76,7 @@ export const SignupForm = ({ createUser, loading, error }) => {
           <br />
           <Row className="justify-content-start">
             <Button
+              variant="outline-secondary"
               // class="btn btn-primary"
               style={{ backgroundColor: "orange", Size: "20px" }}
               type="submit"

@@ -1,0 +1,22 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #cad0d2;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.card__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}

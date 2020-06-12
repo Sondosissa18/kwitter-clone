@@ -51,13 +51,15 @@ export const LoginForm = ({ login, loading, error }) => {
       <br />
 
       <Link to="/signup">
-        <Button
-          // type="submit"
-          // class="btn btn-signup"
-          style={{ marginLeft: "5%" }}
-        >
-          SIGN UP
-        </Button>
+        <>
+          <Button
+            variant="primary"
+            size="1g"
+            style={{ marginLeft: "5%", backgroundColor: "gray", size: "px" }}
+          >
+            SIGN UP
+          </Button>{" "}
+        </>
       </Link>
       {loading && <Loader />}
       {error && <p style={{ color: "red" }}>{error.message}</p>}

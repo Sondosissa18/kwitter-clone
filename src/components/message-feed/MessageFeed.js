@@ -14,36 +14,35 @@ export class MessageFeed extends Component {
     this.props.onListOfMessages();
   };
 
-
   componentDidMount() {
-   this.onListOfMessages();
+    this.onListOfMessages();
   }
 
   
 
   render() {
     return (
-      <div id="messageFeed">
-        <div id="messages">
-          
-      <PostMessageContainer />
-      {this.props.loading && <Loader />}
-      {console.log(this.state)}
-          {this.props.messages.length > 0 &&
-            this.props.messages.map((message) => (
-              <div key={message.id}>
-                <p>{message.username}</p>
-                <p>{message.text}</p>
-                <p>Likes: {message.likes.length}</p>
-                <AddLikeContainer messageIdProps={message.id} likes={message.likes}/>
-              </div>
-            ))}
-          
-          {this.props.error && (
-            <p style={{ color: "red" }}>{this.props.error.message}</p>
-          )}
+      <Container style={{ marginTop: "5%" }}>
+        <div id="messageFeed">
+          <div id="messages">
+            <PostMessageContainer />
+            {this.props.messages.length > 0 &&
+              this.props.messages.map((message) => (
+                <div key={message.id}>
+                  <p>{message.username}</p>
+                  <p>{message.text}</p>
+                  <p>Likes: {message.likes.length}</p>
+                  <AddLikeContainer messageIdProps={message.id} likes={message.likes}/>
+                </div>
+              ))}
+
+            {this.props.loading && <Loader />}
+            {this.props.error && (
+              <p style={{ color: "red" }}>{this.props.error.message}</p>
+            )}
+          </div>
         </div>
-      </div>
+      </Container>
     );
   }
 }
