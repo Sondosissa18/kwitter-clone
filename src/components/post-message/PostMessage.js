@@ -44,8 +44,8 @@ export const PostMessage = ({ createMessage, listOfMessages, error }) => {
                 <br />
               </form>
             </Card.Text>
-            <button variant="primary">Post</button>
-            {/* <Button variant="primary">Post</Button> */}
+            {/* <button variant="primary">Post</button> */}
+            <Button variant="primary">Post</Button>
           </Card.Body>
         </Card>
       </Container>
