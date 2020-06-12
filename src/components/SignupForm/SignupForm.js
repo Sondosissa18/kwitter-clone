@@ -16,6 +16,11 @@ export const SignupForm = ({ createUser, loading, error }) => {
     displayName: "",
   });
 
+  // username: "",
+  //   password: "",
+  //   displayName: "",
+  // });
+
   const handleChange = (event) => {
     const inputName = event.target.name;
     const inputDispaly = event.target.name;
