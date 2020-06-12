@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import ProptTypes from "prop-types";
 import { Loader } from "../loader";
+import { Link } from "react-router-dom";
 import "./LoginForm.css";
+import { Container, Button, Row, Col } from "react-bootstrap";
 
 export const LoginForm = ({ login, loading, error }) => {
   // Not to be confused with "this.setState" in classes
@@ -41,12 +43,27 @@ export const LoginForm = ({ login, loading, error }) => {
           required
           onChange={handleChange}
         />
+        <br />
         <button type="submit" disabled={loading}>
           Login
         </button>
       </form>
+      <br />
+
+      <Link to="/signup">
+        <>
+          <Button
+            variant="primary"
+            size="1g"
+            style={{ marginLeft: "5%", backgroundColor: "gray", size: "px" }}
+          >
+            SIGN UP
+          </Button>{" "}
+        </>
+      </Link>
       {loading && <Loader />}
       {error && <p style={{ color: "red" }}>{error.message}</p>}
+
       {console.log(state)}
     </React.Fragment>
   );

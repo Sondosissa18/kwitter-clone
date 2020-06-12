@@ -81,6 +81,31 @@ class API {
     }
   }
 
+  
+  async createMessage({ text }) {
+    try {
+      const result = await this.axiosInstance.post("/messages", {
+        text
+      });
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+    }
+  }
+
+  async addLikeAction({ messageId }) {
+    try {
+      const result = await this.axiosInstance.post("/likes", {
+        messageId
+      });
+      return result;
+    } catch (err) {
+      // Instructor is logging you out because this failed
+      helpMeInstructor(err);
+    }
+  }
+
+  //create a new user
   async deleteUser(username) {
     try {
       const result = await this.axiosInstance.delete(`/users/${username}`);
