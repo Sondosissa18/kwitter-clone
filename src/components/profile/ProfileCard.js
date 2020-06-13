@@ -4,18 +4,19 @@ import UploadImgProfile from "../profile/UploadImgProfile";
 import UpdateUser from "../profile/UpdateUser";
 import DeleteUser from "./DeleteUser";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "shards-ui/dist/css/shards.min.css";
-// import {
-//   Card,
-//   CardTitle,
-//   CardImg,
-//   CardBody,
-//   CardFooter,
-//   //Button,
-// } from "shards-react";
+//import "shards-ui/dist/css/shards.min.css";
+import {
+  Card,
+  //CardTitle,
+  //CardImg,
+  //CardBody,
+  //CardFooter,
+  //Card.Link,
+  //Button,
+} from "react-bootstrap";
 import { connect } from "react-redux";
 import { getUser } from "../../redux/actions";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import "./ProfileCard.css";
 
 class ProfileCard extends React.Component {
@@ -42,8 +43,16 @@ class ProfileCard extends React.Component {
       <React.Fragment>
         <div id="container">
           <div className="container">
-            {/* <Card border="light" style={{ maxWidth: "70" }}>
-              <CardImg
+            <Card
+              //border="light"
+              style={{
+                Width: "100",
+                border: "1px solid",
+                color: "blue",
+                backgroundColor: "#F0FFF0",
+              }}
+            >
+              <Card.Img
                 className="cardImg"
                 variant="top"
                 src={
@@ -53,22 +62,24 @@ class ProfileCard extends React.Component {
                     : "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"
                 }
               />
+              <br />
               <UploadImgProfile username={true} />
-              {/* this.props.currentUser }
-              <CardBody>
-                <Link to={`/profile/${this.props.users}`}>
-                  {/* <Link to="/profile" Component={this.props.currentUser}> }
-                  <CardTitle className="title">
+
+              {/* this.props.currentUser */}
+              <Card.Body>
+                <Card.Link to={`/profile/${this.props.users}`}>
+                  {/* <Link to="/profile" Component={this.props.currentUser}> */}
+                  <Card.Title className="title">
                     {this.props.displayName}
-                  </CardTitle>
-                </Link>
+                  </Card.Title>
+                </Card.Link>
                 <div className="bio">
                   {this.props.displayName //.about
                     ? this.props.about
                     : "You don't have a Bio Yet"}
                 </div>
-              </CardBody>
-              <CardFooter
+              </Card.Body>
+              <Card.Footer
                 style={{
                   display: "flex",
                   flexDirection: "column",
@@ -78,8 +89,8 @@ class ProfileCard extends React.Component {
                 <p>Joined: {createDate.toDateString()}</p>
                 <p>Last Updated: {updateDate.toDateString()}</p>
                 <DeleteUser username={true} />
-              </CardFooter>
-            </Card> */}
+              </Card.Footer>
+            </Card>
           </div>
         </div>
         <UpdateUser />

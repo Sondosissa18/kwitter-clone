@@ -3,8 +3,13 @@ import { connect } from "react-redux";
 import { updateUser } from "../../redux/actions";
 import { createUser } from "../../redux/actions";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "shards-ui/dist/css/shards.min.css";
-// import { Form, FormInput, Button, Card } from "shards-react";
+//import "shards-ui/dist/css/shards.min.css";
+import {
+  //Form,
+  //FormInput,
+  Card,
+  Button,
+} from "react-bootstrap";
 
 class UpdateUser extends React.Component {
   state = {
@@ -37,65 +42,80 @@ class UpdateUser extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <label htmlFor="editText">Edit Profile</label>
-        {/* <Form
+        {/* <label htmlFor="editText">Edit Profile</label> */}
+        <form
           onSubmit={this.handleSubmit}
           style={{
             display: "flex",
             flexDirection: "row",
             float: "right",
             flexWrap: "wrap",
-            width: "200px",
+            width: "250px",
           }}
         >
-          <label htmlFor="displayname">Edit Display Name:</label>
-
-          <FormInput
-            style={{ display: "block" }}
-            type="text"
-            name="displayName"
-            autoFocus
-            required
-            onChange={this.handleChange}
-            placeholder="enter"
-            value={this.state.displayName}
-          />
-
-          <br />
-          <br />
-
-          <FormInput
+          <Card
             style={{
-              borderRadius: "0",
-              paddingTop: "10px",
-              display: "block",
+              padding: "3%",
+              backgroundColor: "#F0FFF0",
+              border: "1px solid",
+              color: "blue",
+              fontFamily: "monospace",
             }}
-            squared="true"
-            size="sm"
-            type="text"
-            name="about"
-            required
-            onChange={this.handleChange}
-            placeholder="enter"
-            value={this.state.about}
-          />
-
-          <br />
-          <br />
-          <label htmlFor="about">Edit Bio</label>
-          <Button
-            outline
-            variant="primary"
-            //size="btn btn-secondary btn-sm" //  "sm"
-            type="submit"
-            value="submit"
-            onSubmit={this.handleSubmit}
           >
-            Save Edit
-          </Button>
-          <br />
-          <br />
-        </Form> */}
+            <Card.Title style={{ fontSize: "16px" }}>
+              Edit Display Name:
+            </Card.Title>
+            <Card.Text>
+              <input
+                style={{ display: "block" }}
+                type="text"
+                name="displayName"
+                autoFocus
+                required
+                onChange={this.handleChange}
+                placeholder="text here"
+                value={this.state.displayName}
+                size="lg"
+              />
+
+              {/* <br /> */}
+              <br />
+              <Card.Title style={{ fontSize: "16px" }}>Edit Bio:</Card.Title>
+              <input
+                style={{
+                  borderRadius: "0",
+                  paddingTop: "10px",
+                  display: "block",
+                }}
+                squared="true"
+                size="sm"
+                type="text"
+                name="about"
+                required
+                onChange={this.handleChange}
+                placeholder="text here"
+                value={this.state.about}
+              />
+
+              <br />
+              {/* <br /> */}
+
+              {/* </Form.Group> */}
+              <Button
+                //outline
+                variant="primary"
+                //size="btn btn-secondary btn-sm" //  "sm"
+                type="submit"
+                value="submit"
+                onSubmit={this.handleSubmit}
+              >
+                Save Edit
+              </Button>
+            </Card.Text>
+            {/* <br /> */}
+            {/* <br /> */}
+          </Card>
+        </form>
       </React.Fragment>
     );
   }

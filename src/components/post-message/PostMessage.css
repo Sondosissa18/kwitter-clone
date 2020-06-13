@@ -1,13 +1,21 @@
 .card {
   display: flex;
+  /* margin-bottom: 90px; */
   flex-direction: column;
   border: 1px solid #cad0d2;
+  color: #1a0dab;
   border-radius: 4px;
+  /* padding: 10px 10px 10px 10px; */
+
   overflow: hidden;
+
+  /* display: flex;
+  flex-flow: wrap; */
 }
 
 .card__description {
   display: flex;
+  color: #1a0dab;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -16,6 +24,7 @@
 
 hr {
   margin-top: 1rem;
+  color: #1a0dab;
   margin-bottom: 1rem;
   border: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);

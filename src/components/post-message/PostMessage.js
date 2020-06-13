@@ -33,9 +33,18 @@ export const PostMessage = ({
       <Container>
         <form id="message-form" onSubmit={submitMessage}>
           <Card border="info" style={{ marginBottom: "20px", width: "35%" }}>
+            <Card.Header>Your Favorite Microblogging Platform</Card.Header>
+          <Card
+            border="info"
+            style={{
+              backgroundColor: "#EDF5E1",
+              marginBottom: "15px",
+              width: "35%",
+            }}
+          >
             <Card.Header>Add New Message</Card.Header>
             <Card.Body>
-              <Card.Title>Message</Card.Title>
+              <Card.Title>Happy Bloggin!</Card.Title>
               <hr />
               <Card.Text>
                 <input
@@ -56,7 +65,9 @@ export const PostMessage = ({
               {/* <Button variant="primary">Post</Button> */}
             </Card.Body>
           </Card>
+          </Card>
         </form>
+       
       </Container>
 
       {error && <p style={{ color: "red" }}>{error.message}</p>}
