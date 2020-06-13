@@ -33,9 +33,9 @@ export const PostMessage = ({
       <Container>
         <form id="message-form" onSubmit={submitMessage}>
           <Card border="info" style={{ marginBottom: "20px", width: "35%" }}>
-            <Card.Header>Add New Message</Card.Header>
+            <Card.Header>Your Favorite Microblogging Platform</Card.Header>
             <Card.Body>
-              <Card.Title>Message</Card.Title>
+              <Card.Title>Happy Bloggin!</Card.Title>
               <hr />
               <Card.Text>
                 <input

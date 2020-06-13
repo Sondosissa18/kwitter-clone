@@ -75,7 +75,7 @@ export const SignupForm = ({ createUser, loading, error }) => {
           </Row>
           <br />
           <Row className="justify-content-start">
-            {/* <Link to="/"> */}
+            {/* <Link to="/" onClick={handleChange}> */}
             <Button
               variant="outline-secondary"
               // class="btn btn-primary"
@@ -86,6 +86,9 @@ export const SignupForm = ({ createUser, loading, error }) => {
             >
               SIGNUP
             </Button>
+            {/* <Link to="/"> */}
+            {/* <Button variant="outline-secondary">Login Page</Button> */}
+            {/* </Link> */}
             {/* </Link> */}
           </Row>
         </form>

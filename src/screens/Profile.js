@@ -10,14 +10,18 @@ import { MessageFeedContainer } from "../components";
 export const ProfileScreen = () => (
   <>
     <MenuContainer />
-    <h2 style={{ color: "purple", marginLeft: "5%" }}>Profile</h2>
-
+    <br />
+    <h2 style={{ color: "purple", marginLeft: "10%" }}>Profile Page</h2>
+    <br />
     <div className="container">
       <div className="UserCard">
         <ProfileCard username={true} />
       </div>
       <div className="ListOfMessages">
-        <h3 style={{ margin: "auto", color: "purple" }}> Your Posts</h3>{" "}
+        <h3 style={{ margin: "auto", color: "purple", marginBottom: "5%" }}>
+          {" "}
+          Your Posts
+        </h3>{" "}
         <MessageFeedContainer username={true} />
       </div>
     </div>
