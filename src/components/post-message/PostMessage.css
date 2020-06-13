@@ -8,6 +8,9 @@
   /* padding: 10px 10px 10px 10px; */
 
   overflow: hidden;
+
+  /* display: flex;
+  flex-flow: wrap; */
 }
 
 .card__description {

@@ -9,11 +9,33 @@ export const Menu = ({ isAuthenticated, logout }) => {
       <h1>Kwitter</h1>
       {isAuthenticated && (
         <div id="menu-links">
-          <Link to="/profiles/:username">Profile</Link>
-          <Link to="/messagefeed">Message Feed</Link>
-          <Link to="/" onClick={logout}>
-            Logout
-          </Link>
+          <div>
+            <Link to="/profiles/username" style={{}}>
+              Profile
+            </Link>
+          </div>
+
+          <div>
+            <Link to="/messagefeed" style={{}}>
+              Message Feed
+            </Link>
+          </div>
+
+          <div>
+            <Link
+              to="/"
+              onClick={logout}
+              style={{
+                width: "5%",
+                float: "right",
+                marginLeft: "950px",
+                display: "flex",
+                flexFlow: "row wrap",
+              }}
+            >
+              Logout
+            </Link>
+          </div>
         </div>
       )}
     </div>

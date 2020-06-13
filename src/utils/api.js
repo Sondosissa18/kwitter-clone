@@ -36,6 +36,7 @@ class API {
     this.axiosInstance = axiosInstance;
   }
 
+  //1 api
   async login({ username, password }) {
     try {
       const result = await this.axiosInstance.post("/auth/login", {
@@ -49,6 +50,7 @@ class API {
     }
   }
 
+  //2 api
   async logout() {
     try {
       await this.axiosInstance.get("/auth/logout");
@@ -66,6 +68,7 @@ class API {
   //   }
   // }
 
+  //3 api
   async setUserPics(username, UploadImgProfile) {
     try {
       //const data = FormData();
@@ -81,6 +84,7 @@ class API {
     }
   }
 
+  //4 api
   async createMessage({ text }) {
     try {
       const result = await this.axiosInstance.post("/messages", {
@@ -92,6 +96,7 @@ class API {
     }
   }
 
+  //5 api
   async addLikeAction({ messageId }) {
     try {
       const result = await this.axiosInstance.post("/likes", {
@@ -104,6 +109,7 @@ class API {
     }
   }
 
+  //6 api
   async deleteUser(username) {
     try {
       const result = await this.axiosInstance.delete(`/users/${username}`);
@@ -113,6 +119,7 @@ class API {
     }
   }
 
+  //7 api
   async listOfMessages(credentials) {
     try {
       const result = await this.axiosInstance.get("/messages", {
@@ -133,6 +140,7 @@ class API {
   //   }
   // }
 
+  //8 api
   async createUser({ username, displayName, password }) {
     try {
       const result = await this.axiosInstance.post("/users", {
@@ -147,8 +155,7 @@ class API {
     }
   }
 
-  // get a user
-
+  //9 api
   async getUser(username) {
     try {
       const result = await this.axiosInstance.get(`/users/${username}`);
@@ -158,10 +165,8 @@ class API {
     }
   }
 
-  // profile page
-  // /button in profile page
-  // update user
-
+  //10 api
+  // /button in profile page update user
   async updateUser(credentials, username) {
     try {
       const result = await this.axiosInstance.patch(
@@ -174,8 +179,6 @@ class API {
     }
   }
 }
-
-//}
 
 // WARNING.. do not touch below this line if you want to have a good day =]
 

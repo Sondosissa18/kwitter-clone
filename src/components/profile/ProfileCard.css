@@ -1,12 +1,20 @@
+body {
+  background: lightgrey;
+}
+
 #container {
-  width: 40%;
+  width: 36%;
   height: 20px;
-  padding-right: 10px;
-  padding-left: 40px;
-  margin-right: 50%;
+  /* padding-right: 10px;
+  padding-left: 0px;
+  margin-right: 60%;
   margin-left: 20%;
-  justify-content: left;
+  margin-bottom: 5%;
+  margin-top: 3%; */
+  justify-content: right;
   display: flex;
   font-family: monospace;
   flex-flow: row wrap;
+  float: right;
+  overflow-wrap: normal;
 }
