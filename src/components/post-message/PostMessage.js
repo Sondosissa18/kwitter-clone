@@ -59,9 +59,9 @@ export const PostMessage = ({
                   />
                   <br />
                   <br />
-                  <Button variant="primary" disabled={loading}>
+                  <button  >
                     Post
-                  </Button>
+                  </button>
                 </Card.Text>
 
                 {/* <Button variant="primary">Post</Button> */}
