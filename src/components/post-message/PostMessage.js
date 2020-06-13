@@ -39,6 +39,7 @@ export const PostMessage = ({
               style={{
                 backgroundColor: "#EDF5E1",
                 marginBottom: "0px",
+                marginLeft: "-1px",
                 width: "120%",
                 height: "120%",
               }}
