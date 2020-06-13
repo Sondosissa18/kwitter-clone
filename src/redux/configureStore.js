@@ -20,3 +20,9 @@ export default function configureStore(preloadedState) {
   const persistor = persistStore(store);
   return { store, persistor };
 }
+
+// export default function configureStore(preloadedState) {
+//   const store = createStore(persistedReducer, applyMiddleware(thunk));
+//   const persistor = persistStore(store);
+//   return { store, persistor };
+// }

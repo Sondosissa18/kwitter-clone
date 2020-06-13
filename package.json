@@ -8,7 +8,6 @@
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
-    "moment": "2.18.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
@@ -19,7 +18,9 @@
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "redux-persist": "^6.0.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "shards-react": "^1.0.3",
+    "shards-ui": "^3.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

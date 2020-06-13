@@ -5,7 +5,7 @@ import "./LoginForm.css";
 import { createUser } from "../../redux/actions/users";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Button, Row, Col } from "react-bootstrap";
-import { Route } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 import { MenuContainer } from "../menu";
 
 export const SignupForm = ({ createUser, loading, error }) => {
@@ -15,6 +15,11 @@ export const SignupForm = ({ createUser, loading, error }) => {
     password: "",
     displayName: "",
   });
+
+  // username: "",
+  //   password: "",
+  //   displayName: "",
+  // });
 
   const handleChange = (event) => {
     const inputName = event.target.name;
@@ -75,6 +80,7 @@ export const SignupForm = ({ createUser, loading, error }) => {
           </Row>
           <br />
           <Row className="justify-content-start">
+            {/* <Link to="/" onClick={handleChange}> */}
             <Button
               variant="outline-secondary"
               // class="btn btn-primary"
@@ -85,6 +91,7 @@ export const SignupForm = ({ createUser, loading, error }) => {
             >
               SIGNUP
             </Button>
+            {/* </Link> */}
           </Row>
         </form>
         {loading && <Loader />}
