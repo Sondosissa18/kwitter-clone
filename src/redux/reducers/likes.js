@@ -2,7 +2,10 @@
 import {
     LIKE_MESSAGE,
     LIKE_MESSAGE_SUCCESS,
-    LIKE_MESSAGE_FAILURE
+    LIKE_MESSAGE_FAILURE,
+    DISLIKE_MESSAGE,
+    DISLIKE_MESSAGE_SUCCESS,
+    DISLIKE_MESSAGE_FAILURE
 } from "../actions"
 
 
@@ -36,6 +39,10 @@ export const likeReducer = (state = INITIAL_STATE, action) => {
                 ...INITIAL_STATE,
                 error: action.payload,
                 loading: false
+            }
+        case DISLIKE_MESSAGE:
+            return {
+                ...INITIAL_STATE,
             }
         default:
             return state;

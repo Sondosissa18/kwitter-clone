@@ -8,6 +8,9 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 export class MessageFeed extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      items: 20
+    }
   }
 
   onListOfMessages = (event) => {
@@ -16,6 +19,13 @@ export class MessageFeed extends Component {
 
   componentDidMount() {
     this.onListOfMessages();
+  }
+
+  //TODO: INFINITE SCROLLING
+  //LIMIT MESSAGES ON SCREEN?
+  //ADD MORE AS YOU REACH BOTTOM?
+  //
+  showMessages() {
   }
 
   render() {
@@ -48,7 +58,7 @@ export class MessageFeed extends Component {
                   </div>
                 </Card>
               ))}
-
+              {this.showMessages()}
             {this.props.loading && <Loader />}
             {this.props.error && (
               <p style={{ color: "red" }}>{this.props.error.message}</p>
