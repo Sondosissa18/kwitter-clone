@@ -16,6 +16,10 @@ export const SignupForm = ({ createUser, loading, error }) => {
     displayName: "",
   });
 
+  const handleClick = (event) => {
+    window.location.assign = "/";
+  };
+
   const handleChange = (event) => {
     const inputName = event.target.name;
     const inputDispaly = event.target.name;
@@ -75,7 +79,6 @@ export const SignupForm = ({ createUser, loading, error }) => {
           </Row>
           <br />
           <Row className="justify-content-start">
-            {/* <Link to="/" onClick={handleChange}> */}
             <Button
               variant="outline-secondary"
               // class="btn btn-primary"
@@ -86,10 +89,9 @@ export const SignupForm = ({ createUser, loading, error }) => {
             >
               SIGNUP
             </Button>
-            {/* <Link to="/"> */}
-            {/* <Button variant="outline-secondary">Login Page</Button> */}
-            {/* </Link> */}
-            {/* </Link> */}
+            <Link to="/">
+              <Button variant="outline-secondary">Login Page</Button>
+            </Link>
           </Row>
         </form>
         {loading && <Loader />}

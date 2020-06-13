@@ -2,8 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { setUserPics } from "../../redux/actions";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "shards-ui/dist/css/shards.min.css";
-import { Form, FormInput, Button } from "shards-react";
+// import "shards-ui/dist/css/shards.min.css";
+// import { Form, FormInput, Button } from "shards-react";
 
 class UploadImgProfile extends React.Component {
   constructor(props) {
@@ -38,7 +38,7 @@ class UploadImgProfile extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Form
+        {/* <Form
           onSubmit={this.handleSubmit}
           style={{ display: "flex", flexDirection: "row" }}
         >
@@ -62,7 +62,7 @@ class UploadImgProfile extends React.Component {
           >
             Upload
           </Button>
-        </Form>
+        </Form> */}
       </React.Fragment>
     );
   }
