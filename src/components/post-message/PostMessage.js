@@ -32,39 +32,41 @@ export const PostMessage = ({
       {/* <br /> */}
       <Container>
         <form id="message-form" onSubmit={submitMessage}>
-          <Card border="info" style={{ marginBottom: "20px", width: "35%" }}>
+          <Card border="info" style={{ marginBottom: "0px", width: "35%" }}>
             <Card.Header>Your Favorite Microblogging Platform</Card.Header>
-          <Card
-            border="info"
-            style={{
-              backgroundColor: "#EDF5E1",
-              marginBottom: "15px",
-              width: "35%",
-            }}
-          >
-            <Card.Header>Add New Message</Card.Header>
-            <Card.Body>
-              <Card.Title>Happy Bloggin!</Card.Title>
-              <hr />
-              <Card.Text>
-                <input
-                  type="text"
-                  name="text"
-                  value={state.text}
-                  autoFocus
-                  required
-                  onChange={handleChange}
-                  placeholder=" Type a new message"
-                />
-                <br />
-                <br />
-                <Button variant="primary" disabled={loading}>
-                  Post
-                </Button>
-              </Card.Text>
-              {/* <Button variant="primary">Post</Button> */}
-            </Card.Body>
-          </Card>
+            <Card
+              border="info"
+              style={{
+                backgroundColor: "#EDF5E1",
+                marginBottom: "0px",
+                width: "120%",
+                height: "120%",
+              }}
+            >
+              <Card.Header>Add New Message</Card.Header>
+              <Card.Body>
+                <Card.Title>Happy Bloggin!</Card.Title>
+                <hr />
+                <Card.Text>
+                  <input
+                    type="text"
+                    name="text"
+                    value={state.text}
+                    autoFocus
+                    required
+                    onChange={handleChange}
+                    placeholder=" Type a new message"
+                  />
+                  <br />
+                  <br />
+                  <Button variant="primary" disabled={loading}>
+                    Post
+                  </Button>
+                </Card.Text>
+
+                {/* <Button variant="primary">Post</Button> */}
+              </Card.Body>
+            </Card>
           </Card>
         </form>
        
