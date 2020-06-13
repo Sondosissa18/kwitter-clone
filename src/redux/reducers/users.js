@@ -12,22 +12,10 @@ import {
   SETUSERPIC,
   SETUSERPIC_SUCCESS,
   SETUSERPIC_FAILURE,
-  // DELETEUSER,
-  // DELETEUSER_SUCCESS,
-  // DELETEUSER_FAILURE,
-  // GETUSERPIC,
-  // GETUSERPIC_SUCCESS,
-  // GETUSERPIC_FAILURE,
-  //SETUSER_SUCCESS,
-  //LOGOUT,
-  // DELETEUSER,
-  // DELETEUSER_SUCCESS,
-  // DELETEUSER_FAILURE,
 } from "../actions";
 // import { SIGNUP_SUCCESS } from "../actions/users";
 
 const INITIAL_STATE = {
-  //isAuthenticated: true,
   accept: "",
   pictureLocation: "",
   createdAt: "",
@@ -77,13 +65,6 @@ export const usersReducer = (state = INITIAL_STATE, action) => {
         ...state,
         loading: true,
       };
-
-    // case GETUSER_SUCCESS:
-    //   return {
-    //     ...state,
-    //     loading: false,
-    //     currentUser: action.payload,
-    //   };
 
     case GETUSER_SUCCESS:
       return {
@@ -152,60 +133,6 @@ export const usersReducer = (state = INITIAL_STATE, action) => {
         error: action.payload,
         loading: false,
       };
-
-    // case DELETEUSER:
-    //   return {
-    //     ...state,
-    //     //loading: true,
-    //   };
-
-    // case DELETEUSER_SUCCESS:
-    //   return {
-    //     ...state,
-    //     //loading: false,
-    //     isAuthenticated: false,
-    //     username: action.payload,
-    //   };
-
-    // case DELETEUSER_FAILURE:
-    //   return {
-    //     ...state,
-    //     error: action.payload,
-    //     //loading: false,
-    //   };
-
-    // case LOGOUT:
-    //   return {
-    //     isAuthenticated: false,
-    //     loading: true,
-    //   };
-
-    // case GETUSERPIC:
-    //   return {
-    //     ...state,
-    //     loading: true,
-    //   };
-
-    // case GETUSERPIC_SUCCESS:
-    //   return {
-    //     ...state,
-    //     loading: false,
-    //     currentUser: action.payload,
-    //     accept: action.payload.user.accept,
-    //   };
-
-    // case GETUSERPIC_FAILURE:
-    //   return {
-    //     ...state,
-    //     error: action.payload,
-    //     loading: false,
-    //   };
-
-    // case SETUSER_SUCCESS:
-    //   return {
-    //     ...state,
-    //     ...action.payload,
-    //   };
 
     default:
       return state;
