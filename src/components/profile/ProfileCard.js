@@ -4,15 +4,15 @@ import UploadImgProfile from "../profile/UploadImgProfile";
 import UpdateUser from "../profile/UpdateUser";
 import DeleteUser from "./DeleteUser";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "shards-ui/dist/css/shards.min.css";
-import {
-  Card,
-  CardTitle,
-  CardImg,
-  CardBody,
-  CardFooter,
-  //Button,
-} from "shards-react";
+// import "shards-ui/dist/css/shards.min.css";
+// import {
+//   Card,
+//   CardTitle,
+//   CardImg,
+//   CardBody,
+//   CardFooter,
+
+// } from "shards-react";
 import { connect } from "react-redux";
 import { getUser } from "../../redux/actions";
 import { Link } from "react-router-dom";
@@ -42,7 +42,7 @@ class ProfileCard extends React.Component {
       <React.Fragment>
         <div id="container">
           <div className="container">
-            <Card border="light" style={{ maxWidth: "70" }}>
+            {/* <Card border="light" style={{ maxWidth: "70" }}>
               <CardImg
                 className="cardImg"
                 variant="top"
@@ -54,10 +54,10 @@ class ProfileCard extends React.Component {
                 }
               />
               <UploadImgProfile username={true} />
-              {/* this.props.currentUser */}
+              this.props.currentUser
               <CardBody>
                 <Link to={`/profile/${this.props.users}`}>
-                  {/* <Link to="/profile" Component={this.props.currentUser}> */}
+                  <Link to="/profile" Component={this.props.currentUser}>
                   <CardTitle className="title">
                     {this.props.displayName}
                   </CardTitle>
@@ -79,7 +79,7 @@ class ProfileCard extends React.Component {
                 <p>Last Updated: {updateDate.toDateString()}</p>
                 <DeleteUser username={true} />
               </CardFooter>
-            </Card>
+            </Card> */}
           </div>
         </div>
         <UpdateUser />

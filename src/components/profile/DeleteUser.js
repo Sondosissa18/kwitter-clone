@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { deleteUser } from "../../redux/actions";
 import { Button } from "shards-react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "shards-ui/dist/css/shards.min.css";
+// import "shards-ui/dist/css/shards.min.css";
 //import { render } from "@testing-library/react";
 
 class DeleteUser extends React.Component {

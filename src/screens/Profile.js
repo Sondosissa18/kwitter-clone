@@ -17,7 +17,10 @@ export const ProfileScreen = () => (
         <ProfileCard username={true} />
       </div>
       <div className="ListOfMessages">
-        <h3 style={{ margin: "auto", color: "purple" }}> Your Posts</h3>{" "}
+        <h3 style={{ margin: "auto", color: "purple", marginBottom: "2px" }}>
+          {" "}
+          Your Posts
+        </h3>{" "}
         <MessageFeedContainer username={true} />
       </div>
     </div>

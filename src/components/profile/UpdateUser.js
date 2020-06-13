@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { updateUser } from "../../redux/actions";
 import { createUser } from "../../redux/actions";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "shards-ui/dist/css/shards.min.css";
+// import "shards-ui/dist/css/shards.min.css";
 import { Form, FormInput, Button, Card } from "shards-react";
 
 class UpdateUser extends React.Component {
@@ -38,7 +38,7 @@ class UpdateUser extends React.Component {
     return (
       <React.Fragment>
         <label htmlFor="editText">Edit Profile</label>
-        <Form
+        {/* <Form
           onSubmit={this.handleSubmit}
           style={{
             display: "flex",
@@ -95,7 +95,7 @@ class UpdateUser extends React.Component {
           </Button>
           <br />
           <br />
-        </Form>
+        </Form> */}
       </React.Fragment>
     );
   }
