@@ -20,22 +20,33 @@ export class MessageFeed extends Component {
 
   render() {
     return (
-      <Container style={{ marginTop: "5%" }}>
+      <Container style={{ marginTop: "3%" }}>
         <div id="messageFeed">
           <div id="messages">
             <PostMessageContainer />
-            <Card style={{ width: "18rem" }}></Card>
+
             {this.props.messages.length > 0 &&
               this.props.messages.map((message) => (
-                <div key={message.id}>
-                  <p>{message.username}</p>
-                  <p>{message.text}</p>
-                  <p>Likes: {message.likes.length}</p>
-                  <AddLikeContainer
-                    messageIdProps={message.id}
-                    likes={message.likes}
-                  />
-                </div>
+                <Card
+                  style={{
+                    margin: "1%",
+                    padding: "2%",
+                    width: "26%",
+                    color: "purple",
+                    fontSize: "18px",
+                  }}
+                >
+                  <div key={message.id}>
+                    <p>{message.username}</p>
+                    <p>{message.text}</p>
+                    <p>Likes: {message.likes.length}</p>
+
+                    <AddLikeContainer
+                      messageIdProps={message.id}
+                      likes={message.likes}
+                    />
+                  </div>
+                </Card>
               ))}
 
             {this.props.loading && <Loader />}
