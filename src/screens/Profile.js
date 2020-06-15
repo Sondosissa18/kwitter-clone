@@ -2,8 +2,6 @@ import React from "react";
 import { MenuContainer } from "../components";
 import ProfileCard from "../components/profile/ProfileCard";
 import { MessageFeedContainer } from "../components";
-//import { listOfMessages, createMessage } from "../../redux/actions";
-//import { messagefeed } from "../../redux/actions";
 //import "bootstrap/dist/css/bootstrap.min.css";
 //import Card from "react-bootstrap/Card";
 
@@ -27,19 +25,3 @@ export const ProfileScreen = () => (
     </div>
   </>
 );
-
-//{
-
-/* {this.props.messages.map((message) => {
-  return (
-    <message
-      key={message.id}
-      text={message.text}
-      likes={message.likes.length}
-      username={message.username}
-      displayName={message.displayName}
-      id={message.id}
-      />
-  );
-  })} */
-// }
