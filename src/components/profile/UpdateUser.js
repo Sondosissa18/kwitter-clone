@@ -77,8 +77,6 @@ class UpdateUser extends React.Component {
                 value={this.state.displayName}
                 size="lg"
               />
-
-              {/* <br /> */}
               <br />
               <Card.Title style={{ fontSize: "16px" }}>Edit Bio:</Card.Title>
               <input
@@ -96,11 +94,7 @@ class UpdateUser extends React.Component {
                 placeholder="text here"
                 value={this.state.about}
               />
-
               <br />
-              {/* <br /> */}
-
-              {/* </Form.Group> */}
               <Button
                 //outline
                 variant="primary"
@@ -112,8 +106,6 @@ class UpdateUser extends React.Component {
                 Save Edit
               </Button>
             </Card.Text>
-            {/* <br /> */}
-            {/* <br /> */}
           </Card>
         </form>
       </React.Fragment>

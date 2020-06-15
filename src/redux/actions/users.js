@@ -20,25 +20,6 @@ export const SETUSERPIC = "USERS/SETUSERPIC";
 export const SETUSERPIC_SUCCESS = "USERS/SETUSERPIC_SUCCESS";
 export const SETUSERPIC_FAILURE = "USERS/SETUSERPIC_FAILURE";
 
-// export const GETUSERPIC = "USERS/GETUSER";
-// export const GETUSERPIC_SUCCESS = "USERS/GETUSER_SUCCESS";
-// export const GETUSERPIC_FAILURE = "USERS/GETUSER_FAILURE";
-
-//export const SETUSER_SUCCESS = "USERS/SETUSER_SUCCESS";
-
-// export const getUserPic = (username) => async (dispatch, getState) => {
-//   try {
-//     dispatch({ type: GETUSER });
-//     const payload = await api.getUser();
-//     dispatch({ type: GETUSER_SUCCESS, payload });
-//   } catch {
-//     dispatch({
-//       type: GETUSER_FAILURE,
-//       payload: "There was an error on the server",
-//     });
-//   }
-// };
-
 //set profile picture
 export const setUserPics = (photo) => async (dispatch, getState) => {
   const store = getState();
@@ -121,11 +102,3 @@ export const deleteUser = () => async (dispatch, getState) => {
     });
   }
 };
-
-// export const deleteUser = () => async (dispatch, getState) => {
-//   try {
-//     await api.deleteUser();
-//   } finally {
-//     dispatch({ type: DELETEUSER });
-//   }
-// };

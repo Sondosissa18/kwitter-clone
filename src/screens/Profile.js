@@ -3,7 +3,6 @@ import { MenuContainer } from "../components";
 import ProfileCard from "../components/profile/ProfileCard";
 import { MessageFeedContainer } from "../components";
 
-//import { MessageList } from "../components";
 //import "bootstrap/dist/css/bootstrap.min.css";
 //import Card from "react-bootstrap/Card";
 
@@ -14,7 +13,7 @@ export const ProfileScreen = () => (
     <h2 style={{ color: "purple", marginLeft: "10%" }}>Profile Page</h2>
     <br />
     <div className="container">
-      <div className="UserCard">
+      <div className="ProfileCard">
         <ProfileCard username={true} />
       </div>
       <div className="ListOfMessages">

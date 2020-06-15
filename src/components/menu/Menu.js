@@ -29,8 +29,8 @@ export const Menu = ({ isAuthenticated, logout }) => {
                 width: "5%",
                 float: "right",
                 marginLeft: "950px",
-                display: "flex",
-                flexFlow: "row wrap",
+                // display: "flex",
+                // flexFlow: "row wrap",
               }}
             >
               Logout

@@ -5,23 +5,15 @@ import UpdateUser from "../profile/UpdateUser";
 import DeleteUser from "./DeleteUser";
 import "bootstrap/dist/css/bootstrap.min.css";
 //import "shards-ui/dist/css/shards.min.css";
-import {
-  Card,
-  //CardTitle,
-  //CardImg,
-  //CardBody,
-  //CardFooter,
-  //Card.Link,
-  //Button,
-} from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import { connect } from "react-redux";
 import { getUser } from "../../redux/actions";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./ProfileCard.css";
 
 class ProfileCard extends React.Component {
   componentDidMount() {
-    console.log("componentDidMount");
+    //console.log("componentDidMount");
     this.props.getUser();
   }
 
@@ -38,7 +30,7 @@ class ProfileCard extends React.Component {
 
     const createDate = new Date(this.props.createdAt);
     const updateDate = new Date(this.props.updatedAt);
-    console.log(this.props.displayName);
+    //console.log(this.props.displayName);
     return (
       <React.Fragment>
         <div id="container">
@@ -46,7 +38,7 @@ class ProfileCard extends React.Component {
             <Card
               //border="light"
               style={{
-                Width: "100",
+                Width: "200",
                 border: "1px solid",
                 color: "blue",
                 backgroundColor: "#F0FFF0",
@@ -67,12 +59,11 @@ class ProfileCard extends React.Component {
 
               {/* this.props.currentUser */}
               <Card.Body>
-                <Card.Link to={`/profile/${this.props.users}`}>
-                  {/* <Link to="/profile" Component={this.props.currentUser}> */}
+                <Link to="/messagefeed">
                   <Card.Title className="title">
                     {this.props.displayName}
                   </Card.Title>
-                </Card.Link>
+                </Link>
                 <div className="bio">
                   {this.props.displayName //.about
                     ? this.props.about

@@ -13,7 +13,7 @@ const NotFound = ({ location }) => (
           padding: "5px",
         }}
       >
-        Go Home
+        Go Back To Profile Page
       </Link>
     </button>
     <img
