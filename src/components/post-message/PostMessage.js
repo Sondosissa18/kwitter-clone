@@ -59,9 +59,9 @@ export const PostMessage = ({
                   />
                   <br />
                   <br />
-                  <Button variant="primary" disabled={loading}>
+                  <button  >
                     Post
-                  </Button>
+                  </button>
                 </Card.Text>
 
                 {/* <Button variant="primary">Post</Button> */}
@@ -69,6 +69,7 @@ export const PostMessage = ({
             </Card>
           </Card>
         </form>
+       
       </Container>
 
       {error && <p style={{ color: "red" }}>{error.message}</p>}
