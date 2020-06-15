@@ -14,9 +14,7 @@ export class MessageFeed extends Component {
       hasMoreItems: true,
       scrollLoading: false,
       newMessages: [],
-      comparedMessageArray: []
     }
-    this.newMessages = []
   }
 
   onListOfMessages = (event) => {
@@ -63,7 +61,6 @@ export class MessageFeed extends Component {
     } 
     
     if ((this.props.postLoading === true)) {
-      // console.log(prevProps);
       console.log('success!')
       setTimeout(() => {
         for (let i = 0; i < this.props.messages.length; i++) {
@@ -130,11 +127,6 @@ export class MessageFeed extends Component {
     }
   }
 
-
-  //TODO: INFINITE SCROLLING
-  //LIMIT MESSAGES ON SCREEN?
-  //ADD MORE AS YOU REACH BOTTOM?
-  //
   showMessages() {
     const items = [];
     for (let i = 0; i < this.state.items; i++) {
@@ -152,21 +144,7 @@ export class MessageFeed extends Component {
       }, 2000);
       console.log(this.state.items);
     }
-  }
-
-  // infiniteScroll() {
-  //   let infScrollArray = [];
-  //   infScrollArray.push(<InfiniteScroll
-  //   pageStart={0}
-  //   loadMore={this.loadMore.bind(this)}
-  //   hasMore={this.state.hasMoreItems}
-  //   loader={<Loader />}
-  //   >
-  //   {this.showMessages()}
-  //   </InfiniteScroll>)
-  //   return infScrollArray;
-  // }
-  
+  }  
 
   render() {
     return (
@@ -182,7 +160,6 @@ export class MessageFeed extends Component {
               >
               {this.showMessages()}
               </InfiniteScroll>
-              {/* {console.log(this.props.likesLoading)} */}
             {this.props.loading && <Loader />}
             {this.props.error && (
               <p style={{ color: "red" }}>{this.props.error.message}</p>

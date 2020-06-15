@@ -8,7 +8,6 @@ export const PostMessage = ({
   loading,
   error,
 }) => {
-  // Not to be confused with "this.setState" in classes
   const [state, setState] = useState({
     text: "",
   });

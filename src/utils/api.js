@@ -139,15 +139,6 @@ class API {
     }
   }
 
-  // async createUser(credentials) {
-  //   try {
-  //     const result = await this.axiosInstance.post("/users", credentials);
-  //     return result;
-  //   } catch (err) {
-  //     helpMeInstructor(err);
-  //   }
-  // }
-
   //8 api
   async createUser({ username, displayName, password }) {
     try {

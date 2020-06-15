@@ -38,7 +38,7 @@ class ProfileCard extends React.Component {
             <Card
               //border="light"
               style={{
-                Width: "100",
+                Width: "200",
                 border: "1px solid",
                 color: "blue",
                 backgroundColor: "#F0FFF0",
