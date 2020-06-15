@@ -51,7 +51,7 @@ class UploadImgProfile extends React.Component {
           />
           <Button
             onClick={this.handleSubmit}
-            squared
+            squared="true"
             theme="primary"
             size="sm"
             type="submit"

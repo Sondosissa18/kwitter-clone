@@ -58,7 +58,14 @@ export const PostMessage = ({
                   />
                   <br />
                   <br />
-                  <button  >
+                  <button
+                  style={{
+                    backgroundColor: "dodgerBlue",
+                    color: "white",
+                    padding: "10px",
+                    marginTop: 10,
+                    width: 100
+                  }} >
                     Post
                   </button>
                 </Card.Text>
