@@ -8,7 +8,6 @@ export const PostMessage = ({
   loading,
   error,
 }) => {
-  // Not to be confused with "this.setState" in classes
   const [state, setState] = useState({
     text: "",
   });
@@ -17,7 +16,7 @@ export const PostMessage = ({
     event.preventDefault();
     createMessage(state);
     setState((prevState) => ({ ...prevState, text: "" }));
-    setTimeout(listOfMessages, 200);
+    setTimeout(listOfMessages, 300);
   };
 
   const handleChange = (event) => {
