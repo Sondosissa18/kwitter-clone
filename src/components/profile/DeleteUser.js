@@ -19,8 +19,9 @@ class DeleteUser extends React.Component {
     return (
       <React.Fragment>
         <Button
-          outline
-          theme="danger"
+          //outline
+          //theme="danger"
+          variant="outline-danger"
           size="sm"
           onClick={this.handleDeleteUser}
         >
