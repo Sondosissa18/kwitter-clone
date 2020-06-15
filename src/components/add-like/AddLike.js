@@ -55,7 +55,7 @@ export const AddLike = ({ addLikeAction, username, messageIdProps, likes, listOf
     addLikeAction(apiRequest);
     // console.log(likes[0].username);
     // console.log(username);
-    setTimeout(listOfMessages, 500)
+    setTimeout(listOfMessages, 200)
   
   };
 

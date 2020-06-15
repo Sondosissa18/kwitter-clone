@@ -17,7 +17,7 @@ export const PostMessage = ({
     event.preventDefault();
     createMessage(state);
     setState((prevState) => ({ ...prevState, text: "" }));
-    setTimeout(listOfMessages, 200);
+    setTimeout(listOfMessages, 300);
   };
 
   const handleChange = (event) => {
