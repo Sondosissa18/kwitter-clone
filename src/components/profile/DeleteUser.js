@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { deleteUser } from "../../redux/actions";
 import { Button } from "react-bootstrap";
+//import { Button } from "shards-react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
 //import { render } from "@testing-library/react";
@@ -19,8 +20,9 @@ class DeleteUser extends React.Component {
     return (
       <React.Fragment>
         <Button
-          outline
-          theme="danger"
+          //outline
+          //theme="danger"
+          variant="outline-danger"
           size="sm"
           onClick={this.handleDeleteUser}
         >

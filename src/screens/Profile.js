@@ -22,7 +22,7 @@ export const ProfileScreen = () => (
           {" "}
           Your Posts
         </h3>{" "}
-        <MessageFeedContainer username={true} />)
+        <MessageFeedContainer username={true} />
       </div>
     </div>
   </>

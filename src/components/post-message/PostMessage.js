@@ -58,7 +58,15 @@ export const PostMessage = ({
                   />
                   <br />
                   <br />
-                  <button  >
+                  <button
+                    style={{
+                      backgroundColor: "dodgerBlue",
+                      color: "white",
+                      padding: "10px",
+                      marginTop: 10,
+                      width: 100,
+                    }}
+                  >
                     Post
                   </button>
                 </Card.Text>
@@ -68,7 +76,6 @@ export const PostMessage = ({
             </Card>
           </Card>
         </form>
-       
       </Container>
 
       {error && <p style={{ color: "red" }}>{error.message}</p>}
