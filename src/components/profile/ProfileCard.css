@@ -5,10 +5,11 @@ body {
 #container {
   width: 36%;
   height: 20px;
-  justify-content: right;
+  justify-content: space-between;
   display: flex;
   font-family: monospace;
   flex-flow: row wrap;
   float: right;
   overflow-wrap: normal;
+  margin: 0 auto;
 }

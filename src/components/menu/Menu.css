@@ -6,14 +6,19 @@
   align-items: center;
   padding: 0 1em;
   border-radius: 1em;
+  flex-flow: row wrap;
+  overflow-wrap: normal;
+  overflow: scroll;
 }
 
 #menu-links {
   display: flex;
+
   padding-left: 1em;
 }
 
 #menu-links a {
+  /* display: flex; */
   padding-right: 0.5em;
   color: darkblue;
   text-decoration: underline;
