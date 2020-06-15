@@ -109,6 +109,15 @@ class API {
     }
   }
 
+  async deleteLikeAction({ likeId }) {
+    try {
+      await this.axiosInstance.delete(`/likes/${likeId}`);
+    } catch (err) {
+      helpMeInstructor(err);
+    }
+  }
+
+
   //6 api
   async deleteUser(username) {
     try {
@@ -119,11 +128,10 @@ class API {
     }
   }
 
-  //7 api
-  async listOfMessages(credentials) {
+  async listOfMessages(username) {
     try {
       const result = await this.axiosInstance.get("/messages", {
-        credentials,
+        username,
       });
       return result;
     } catch (err) {
