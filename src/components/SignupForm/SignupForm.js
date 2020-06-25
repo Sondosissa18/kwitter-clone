@@ -7,7 +7,6 @@ import { createUser } from "../../redux/actions/users";
 import { Container, Button, Row, Col } from "react-bootstrap";
 import { Route, Link } from "react-router-dom";
 import { MenuContainer } from "../menu";
-
 export const SignupForm = ({ createUser, loading, error }) => {
   // Not to be confused with "this.setState" in classes
   const [state, setState] = useState({
@@ -15,34 +14,30 @@ export const SignupForm = ({ createUser, loading, error }) => {
     password: "",
     displayName: "",
   });
-
   const handleClick = (event) => {
     window.location.assign = "/";
   };
-
   const handleChange = (event) => {
     const inputName = event.target.name;
     const inputDispaly = event.target.name;
     const inputValue = event.target.value;
     setState((prevState) => ({ ...prevState, [inputName]: inputValue }));
   };
-
   const handleSIGNUP = (event) => {
     //todo
     event.preventDefault();
     createUser(state);
+    const confirmed = window.confirm("Account Successfully Created");
   };
-
+  console.log(loading);
   return (
     <React.Fragment>
       <MenuContainer />
-
       <Container style={{ marginLeft: "5%" }}>
         <form id="SIGNUP-form" onSubmit={handleSIGNUP}>
           <br />
           <Row className="justify-content-start" style={{ padding: "3px" }}>
             <label htmlFor="username">Username</label>
-
             <input
               style={{ padding: "3px" }}
               type="text"
@@ -55,7 +50,6 @@ export const SignupForm = ({ createUser, loading, error }) => {
           </Row>
           <Row className="justify-content-start" style={{ padding: "3px" }}>
             <label htmlFor="password">Password</label>
-
             <input
               style={{ padding: "3px" }}
               type="password"
@@ -67,7 +61,6 @@ export const SignupForm = ({ createUser, loading, error }) => {
           </Row>
           <Row className="justify-content-start" style={{ padding: "3px" }}>
             <label htmlFor="displayName">DisplayName</label>
-
             <input
               style={{ padding: "3px" }}
               type="displayName"
@@ -96,6 +89,7 @@ export const SignupForm = ({ createUser, loading, error }) => {
         </form>
         {loading && <Loader />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
+        {/* { this.state.  <p>{Account Successfully created }</p>} */}
       </Container>
     </React.Fragment>
   );
