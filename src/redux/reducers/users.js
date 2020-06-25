@@ -14,7 +14,6 @@ import {
   SETUSERPIC_FAILURE,
 } from "../actions";
 // import { SIGNUP_SUCCESS } from "../actions/users";
-
 const INITIAL_STATE = {
   accept: "",
   pictureLocation: "",
@@ -28,7 +27,6 @@ const INITIAL_STATE = {
   loading: false,
   currentUser: {},
 };
-
 export const usersReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case SIGNUP:
@@ -51,21 +49,19 @@ export const usersReducer = (state = INITIAL_STATE, action) => {
           },
           statusCode: action.payload.statusCode,
         },
+        loading: false,
       });
-
     case SIGNUP_FAILURE:
       return {
         ...INITIAL_STATE,
         error: action.payload,
         loading: false,
       };
-
     case GETUSER:
       return {
         ...state,
         loading: true,
       };
-
     case GETUSER_SUCCESS:
       return {
         ...state,
@@ -77,22 +73,19 @@ export const usersReducer = (state = INITIAL_STATE, action) => {
         updatedAt: action.payload.user.updatedAt,
         pictureLocation: action.payload.user.pictureLocation,
         googleId: action.payload.user.googleId,
-        loading: true,
+        loading: false,
       };
-
     case GETUSER_FAILURE:
       return {
         ...state,
         error: action.payload,
         loading: false,
       };
-
     case UPDATEUSER:
       return {
         ...state,
         loading: true,
       };
-
     case UPDATEUSER_SUCCESS:
       return {
         ...state,
@@ -103,37 +96,32 @@ export const usersReducer = (state = INITIAL_STATE, action) => {
         updatedAt: action.payload.user.updatedAt,
         pictureLocation: action.payload.user.pictureLocation,
         googleId: action.payload.user.googleId,
-
+        loading: false,
         statusCode: 0,
       };
-
     case UPDATEUSER_FAILURE:
       return {
         ...INITIAL_STATE,
         error: action.payload,
         loading: false,
       };
-
     case SETUSERPIC:
       return {
         ...state,
         loading: true,
       };
-
     case SETUSERPIC_SUCCESS:
       return {
         ...state,
         loading: false,
         //currentUser: action.payload,
       };
-
     case SETUSERPIC_FAILURE:
       return {
         ...state,
         error: action.payload,
         loading: false,
       };
-
     default:
       return state;
   }

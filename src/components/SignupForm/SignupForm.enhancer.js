@@ -4,8 +4,8 @@ import { createUser, getUser, updateUser } from "../../redux/actions/users.js";
 
 // https://react-redux.js.org/using-react-redux/connect-mapstate#connect-extracting-data-with-mapstatetoprops
 const mapStateToProps = (state) => ({
-  loading: state.auth.loading,
-  error: state.auth.error,
+  loading: state.users.loading,
+  error: state.users.error,
 });
 
 // https://react-redux.js.org/using-react-redux/connect-mapdispatch#connect-dispatching-actions-with-mapdispatchtoprops

@@ -56,7 +56,7 @@ export class MessageFeed extends Component {
           this.showMessages()
         }
         }
-      }, 500);
+      }, 1000);
       console.log(prevProps.messages)
     } 
     
